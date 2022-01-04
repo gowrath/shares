@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Getting Started with Create React App
+=======
+# Share Subscriptions
+>>>>>>> 65642701888d41f8bc316c731160d31557d86a4c
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<<<<<<< HEAD
 ## Available Scripts
 
 In the project directory, you can run:
@@ -72,3 +76,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # sharingapp
 >>>>>>> 5421982bfe9c4a3bb264cc535236d5e3baa11cae
+=======
+>>>>>>> 65642701888d41f8bc316c731160d31557d86a4c

@@ -4,13 +4,12 @@ import React from 'react';
 //import Form from "./components/Form";
 //import FilterButton from "./components/FilterButton";
 //import { nanoid } from "nanoid";
-import ToggleButton from "./components/ToggleButton";
-import { Container } from 'react-bootstrap';
+
 //import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import {Col, Row} from 'react-bootstrap';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
-import Userfront from "@userfront/react";
+
+import { HashRouter as Router} from "react-router-dom";
+
 import HeaderNav from './components/HeaderNav';
 
 /* Userfront.init("jb747qn6");

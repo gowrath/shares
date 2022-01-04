@@ -7,6 +7,7 @@ import Login from './Login';
 import Home from './Home';
 import PasswordReset from './PasswordReset';
 import Dashboard from './Dashboard';
+import Landing from './Landing';
 
 Userfront.init("jb747qn6");
 
@@ -36,6 +37,9 @@ function Header(){
         <Link to="/">Home</Link>
         </Col>
         <Col>
+        <Link to="/landing">Landing</Link>
+        </Col>
+        <Col>
         <Link to="/login">Login</Link>
         </Col>
         <Col>
@@ -60,6 +64,9 @@ function Header(){
     </Route>
     <Route path="/reset">
       <PasswordReset />
+    </Route>
+    <Route path="/landing">
+      <Landing />
     </Route>
     <Route path="/dashboard">
       <Dashboard />

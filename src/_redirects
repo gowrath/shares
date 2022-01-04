@@ -1,5 +1,3 @@
-/home              /
-/login             /landing
-/landing           /landing
-/reset             /reset
-/dashboard         /dashboard
+from ="/*"
+to = "index.html"
+status = 200

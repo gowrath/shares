@@ -11,9 +11,8 @@ import './App.css';
 import {Col, Row} from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import Userfront from "@userfront/react";
-import HeaderNav from './components/HeaderNav';
 
-/* Userfront.init("jb747qn6");
+Userfront.init("jb747qn6");
 
 const SignupForm = Userfront.build({
   toolId: "rlnkoa"
@@ -29,9 +28,9 @@ const PasswordResetForm = Userfront.build({
 
 const LogoutButton = Userfront.build({
   toolId: "bldord"
-}); */
+});
 
-/* class LogoutButton extends React.Component {
+class LogoutButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -51,7 +50,7 @@ const LogoutButton = Userfront.build({
       </button>
     );
   }
-} */
+}
 
 
 
@@ -67,12 +66,9 @@ export default function App() {
         <p className="center"> 
           Your service for all things sharing.
         </p>
-        <br />
       </div>
 
-      <HeaderNav />
-      
-  {/*         <Container>
+          <Container>
           <Row>
               <Col>
               <Link to="/">Home</Link>
@@ -87,17 +83,36 @@ export default function App() {
               <Link to="/dashboard">Dashboard</Link>
               </Col>
               <Col>
-              <div id="logout-button">
               <LogoutButton />
-              </div>
               </Col>
           </Row>  
-          </Container> */}
+          </Container>
+
+      <div>
+      <br />
+
+      </div>
+
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/reset">
+            <PasswordReset />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="/logout">
+            <LogoutButton />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
 
 
 
-
-
+        </Switch>
 
 
 
@@ -112,7 +127,7 @@ export default function App() {
 
 
 
-/* function Home() {
+function Home() {
   return (
     <div>
     <h2 className="center">Home</h2>
@@ -137,14 +152,14 @@ function PasswordReset() {
       <PasswordResetForm />
     </div>
   );
-} */
+}
 
 /* function Dashboard() {
   return <h2 className="center">Dashboard</h2>;
 } */
 
 
-/* function Dashboard() {
+function Dashboard() {
   function renderFn({ location }) {
     // If the user is not logged in, redirect to login
     if (!Userfront.accessToken()) {
@@ -164,22 +179,22 @@ function PasswordReset() {
       <div>
         <h2>Dashboard</h2>
         <pre>{userData}</pre>
-        
+        <button onClick={Userfront.logout}>Logout</button>
       </div>
     );
   }
 
   return <Route render={renderFn} />;
-} */
+}
 
 
-/* function Logout() {
+function Logout() {
   return (
     <div className="logout-button">
       <LogoutButton />
     </div>
   );
-} */
+}
 
 
 

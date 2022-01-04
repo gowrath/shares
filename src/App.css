@@ -1,38 +1,176 @@
-.App {
+/*Changed deck-style to shade of white --what classes background is*/
+
+#logout-button {
+  background-color: purple;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+}
+
+#logout-button[disabled] {
+  background-color: lightgray;
+  color: purple;
+}
+
+.initial-padding {
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#logout-button {
+  background-color: white;
+  color: white;
+  border: black;
+  padding: 5px 10px;
+  vertical-align: text-top;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#logout-button[disabled] {
+  background-color: gray;
+  color: black;
+  vertical-align: text-top;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+.sidebar {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 100px; /* Set the width of the sidebar */
+  position: relative; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: white; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+
+.klass-card-deck-style {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  display: flex;
+  flex-direction: 'row';
+  background-color:#0B0B45;
+
+}
+
+.klass-card-style {
+  text-decoration: none !important;
+  flex: 1;
+  max-width: 30%;
+
+}
+
+/*Changes text of the classes under My Classes
+  a:link also changes the dropdown menu for Seating Charts
+*/
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+/* Controls seating chart width */
+
+.card-sc-width {
+  width: 200px;
+  margin-top: 20px;
+} 
+
+/*Changed card-body to shade of white*/
+
+.card-body {
+  background:skyblue;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*changes the text of the seating chart names*/
+
+.card-text{
+  color: black;
+}
+
+/*NavBar Color changed to lighter black*/
+
+.navbarClass {
+  color: white;
+  background-color:#0B0B45;
+}
+
+.navBar-nav{
+  background-color: yellow;
+}
+
+p {
+  color:black;
+}
+
+/* .brand-fontColor{
+  color: white;
+}
+ */
+
+/*Block next to My Classes and the School /Change School Text */
+
+/* .center-vertically {
+  background-color:#141414;
+  color:white;
+} */
+
+/*The 'My Classes' text block*/
+
+.block-header {
+  font-size: 1.5rem;
+  font-family: 'Gobold Blocky', sans-serif;
+  background-color:#0B0B45;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.container{
+  background-color:white;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+

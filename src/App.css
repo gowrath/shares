@@ -1,4 +1,44 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  grid-auto-rows: 70px;
+  grid-template-areas:
+    "a a"
+    "b b"
+    "b b"
+    "c c"
+    "c c"
+
+}
+.item1 {
+  grid-area: a;
+
+  justify-self: center;
+
+}
+
+.item2 {
+  grid-area: b;
+ 
+  justify-self: center;
+  align-items: center
+
+}
+
+.item3 {
+  grid-area: c;
+ 
+  justify-self: center;
+  align-items: center;
+
+}
+
+
 /*Changed deck-style to shade of white --what classes background is*/
+
+
+
 
 #logout-button {
   background-color: purple;
@@ -140,9 +180,9 @@ a:active {
   background-color: yellow;
 }
 
-p {
+/* p {
   color:black;
-}
+} */
 
 /* .brand-fontColor{
   color: white;
@@ -166,11 +206,22 @@ p {
 }
 
 
-.container{
-  background-color:white;
-  color: black;
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 
-
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 

@@ -21,7 +21,7 @@ ReactDOM.render(
        
         <App />
           </Background>
-    </ThemeProvider>,
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

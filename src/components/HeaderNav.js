@@ -16,11 +16,11 @@ const SignupForm = Userfront.build({
 });
 
 const LoginForm = Userfront.build({
-  toolId: "nrdlan",
+  toolId: "nrdlan"
 });
 
 const PasswordResetForm = Userfront.build({
-  toolId: "lobndm",
+  toolId: "lobndm"
 });
 
 const LogoutButton = Userfront.build({

@@ -64,7 +64,10 @@ const LogoutButton = Userfront.build({
 export default function App() {
   return (
     <Router>
-      <div className="initial-padding">
+      <div className="bg-white"
+      
+      
+      >
 
       <h1 className="center">ShareSub, Inc.</h1>
 

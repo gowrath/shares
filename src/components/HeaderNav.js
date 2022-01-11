@@ -40,7 +40,7 @@ function Header(){
         <Link to="/subs">Subs</Link>
         </Col>
         <Col>
-        <Link to="/login">Login</Link>
+        <Link to="/login">Login / Sign Up</Link>
         </Col>
         <Col>
         <Link to="/reset">Reset</Link>

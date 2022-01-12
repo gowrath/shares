@@ -8,6 +8,11 @@ function Subs() {
     <div>
     <h2 className="center">Subscriptions</h2>
     
+    <div className="center">
+
+      <img src={require('./carousel-3.jpg').default} width="300" height="150" style={{ alignSelf: 'center' }}/>
+
+    </div>
     
     <div className="left">
       <p>

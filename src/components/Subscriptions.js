@@ -49,7 +49,7 @@ function Subs() {
         *Friend tries their best to explain*
         <br />
         <br />
-        -->Assuming you're not a psychopath, you would like to share 'subs' with your friend. 
+        Assuming you're not a psychopath, you would like to share 'subs' with your friend. 
         <br />
         <br />
         This is the technological solution to communicatory problems around subscriptions and sharing. 

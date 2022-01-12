@@ -13,37 +13,36 @@ const SignupForm = Userfront.build({
 function Home() {
   return (
 
-      <div className="center">
+      <div className="wrapper">
           <div>
           </div>
 
-          <div className="center">
+          <div className="item1">
             <p>
             <br></br>
-            Modern life and subscriptions. Necessary?
-            <br></br>
-            What if sharing were a bit easier? What if sharing led to connection?
+            Modern life. Subs. Aren't they ubiqitous?
             </p>
           </div>
 
-          <div className="center">
+          <div className="item2">
 
-          <img src={require('./carousel-1.jpg').default} width="300" height="150" style={{ alignSelf: 'center' }}/>
-
+          <img src={require('./carousel-1.jpg').default} width="300" height="150"/>
+          <br></br>
           </div>
           
-
+          <div className="item3">
+          <br></br>
+          <br></br>
+          <br></br>
+          <img src={require('./carousel-2.jpg').default} width="300" height="200"/>
+          </div>
 
           <div className="write-center">
             <p>
-
+              <br></br>
               What if life were a bit simpler? If you could share what you loved with friends?
-
+              <br></br>
             </p>
-          </div>
-
-          <div className="center">
-          <img src={require('./carousel-2.jpg').default} width="300" height="200" style={{ alignSelf: 'center' }}/>
           </div>
 
       </div>

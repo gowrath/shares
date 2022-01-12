@@ -72,7 +72,7 @@
   justify-content: left;
   text-align: left;
   margin: auto;
-  padding: 10px 50px 10px 50px;
+  padding: 30px 75px 30px 75px;
 }
 
 .write-center {
@@ -218,7 +218,7 @@ a:active {
 
 .block-header {
   font-size: 1.5rem;
-  font-family: 'Gobold Blocky', sans-serif;
+  font-family: 'Luxurious Roman', sans-serif;
   background-color:#0B0B45;
   color: white;
 }

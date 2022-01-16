@@ -7,6 +7,7 @@ It is:
 
 1) A site to share information with friends about the subscriptions you have.
 2) A portal to share the latest hot TV show or movie (sort by relevance and topical)
+3) A cost calculator to figure out how much you are spending per month. 
 
 Check out the beta here:
 https://sharesub-5c6f8.web.app/

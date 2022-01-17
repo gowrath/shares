@@ -9,6 +9,8 @@ It is:
 2) A portal to share the latest hot TV show or movie (sort by relevance and topical)
 3) A cost calculator to figure out how much you are spending per month. 
 
+The cost calculator is a web scraper from the various subscription websites: Netflix, HBO, Disney Plus.
+
 Check out the beta here:
 https://sharesub-5c6f8.web.app/
 

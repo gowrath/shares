@@ -1,6 +1,6 @@
-import React from 'react';
-import SubForm from './SubForm';
-import { useParams } from 'react-router-dom';
+import React from "react";
+import SubForm from "./SubForm";
+import { useParams } from "react-router-dom";
 
 const EditSub = ({ history, subs, setSubs }) => {
   const { id } = useParams();
@@ -9,11 +9,11 @@ const EditSub = ({ history, subs, setSubs }) => {
   const handleOnSubmit = (sub) => {
     const filteredSubs = subs.filter((sub) => sub.id !== id);
     setSubs([sub, ...filteredSubs]);
-    history.push('/subslist');
+    history.push("/subslist");
   };
 
   return (
-    <div>
+    <div className='left'>
       <SubForm sub={subToEdit} handleOnSubmit={handleOnSubmit} />
     </div>
   );

@@ -1,10 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 //import { BrowserRouter as Route, Redirect } from "react-router-dom";
 
 import Userfront from "@userfront/react";
 //import Home from './Home';
-import Subs from './Subscriptions';
+//import About from "./About";
 
 Userfront.init("jb747qn6");
 
@@ -24,7 +30,6 @@ const LogoutButton = Userfront.build({
   toolId: "bldord"
 }); */
 
-
 function Dashboard() {
   function renderFn({ location }) {
     // If the user is not logged in, redirect to login
@@ -42,10 +47,10 @@ function Dashboard() {
     // If the user is logged in, show the dashboard
     const userData = JSON.stringify(Userfront.user, null, 2);
     return (
-    <div>
-      <h2>Dashboard</h2>
-      <pre>{userData}</pre>
-    </div>    
+      <div>
+        <h2>Dashboard</h2>
+        <pre>{userData}</pre>
+      </div>
     );
   }
 
@@ -53,7 +58,6 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
 
 /* h2>Dashboard</h2>
 <pre>{userData}</pre> */

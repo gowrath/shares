@@ -35,7 +35,7 @@
 }
 
 
-.book-list {
+.sub-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -44,7 +44,7 @@
 
 .sub {
   margin: 10px;
-  width: 288px;
+  width: 100px;
   overflow: hidden;
 }
 .sub-title {
@@ -192,17 +192,18 @@ a:active {
 /* Controls seating chart width */
 
 .card-sc-width {
-  width: 200px;
+  width: 100px;
   margin-top: 20px;
 } 
 
 /*Changed card-body to shade of white*/
 
 .card-body {
-  background:skyblue;
+  background: paleturquoise;
   margin: 0;
   padding-left: 0;
   padding-right: 0;
+
 }
 
 /*changes the text of the seating chart names*/

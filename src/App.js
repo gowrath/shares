@@ -10,13 +10,12 @@ import './App.css';
 
 import {
   BrowserRouter as Router,
- /*  Switch,
-  Route,
-  Link,
-  Redirect, // Be sure to add this import */
+
 } from "react-router-dom";
 
 import HeaderNav from './components/HeaderNav';
+
+
 
 /* Userfront.init("jb747qn6");
 
@@ -65,10 +64,7 @@ export default function App() {
   return (
     <Router>
       <div className="bg-white"
-      
-      
       >
-
       <h1 className="center">ShareSub, Inc.</h1>
 
       <div>

@@ -35,6 +35,30 @@
 }
 
 
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub {
+  margin: 10px;
+  width: 288px;
+  overflow: hidden;
+}
+.sub-title {
+    font-weight: bold;
+  }
+
+  .sub-details {
+    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    }
+  
+
+
+
 /*Changed deck-style to shade of white --what classes background is*/
 
 

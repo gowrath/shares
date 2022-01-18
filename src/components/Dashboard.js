@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+//import { BrowserRouter as Route, Redirect } from "react-router-dom";
+
 import Userfront from "@userfront/react";
-import Home from './Home';
+//import Home from './Home';
 import Subs from './Subscriptions';
 
 Userfront.init("jb747qn6");

@@ -8,6 +8,11 @@ import Home from './Home';
 import PasswordReset from './PasswordReset';
 import Dashboard from './Dashboard';
 import Subs from './Subscriptions';
+import AddSub from './AddSub';
+import SubsList from './SubsList';
+import useLocalStorage from '../hooks/useLocalStorage';
+import EditSub from './EditSub';
+
 
 Userfront.init("jb747qn6");
 
@@ -28,19 +33,24 @@ const LogoutButton = Userfront.build({
 });
 
 
+
+
+
 function Header(){
+
+  const [subs, setSubs] = useLocalStorage('subs', []);
   return (
     <div>
     <Container>
     <Row>
         <Col>
-        <Link to="/">Home</Link>
+        <Link to="/subslist">Home</Link>
         </Col>
         <Col>
         <Link to="/subs">Subs</Link>
         </Col>
         <Col>
-        <Link to="/login">Login / Sign Up</Link>
+        <Link to="/login">Login</Link>
         </Col>
         <Col>
         <Link to="/reset">Reset</Link>
@@ -68,13 +78,39 @@ function Header(){
     <Route path="/subs">
       <Subs />
     </Route>
+
+
+
+    <Route
+      render={(props) => (
+        <SubsList {...props} subs={subs} setSubs={setSubs} />
+    )}
+    path="/home"
+    />
+
+
+    <Route
+      render={(props) => (
+        <AddSub {...props} subs={subs} setSubs={setSubs} />
+    )}
+    path="/addsub"
+    />
+
+    <Route
+      render={(props) => (
+        <EditSub {...props} subs={subs} setSubs={setSubs} />
+      )}
+      path="/edit/:id"
+    />
+    <Route component={() => <Redirect to="/home" />} />
+
     <Route path="/dashboard">
       <Dashboard />
     </Route>
     <Route path="/logout">
       <LogoutButton />
     </Route>
-    <Route path="/">
+    <Route path="/home">
       <Home />
     </Route>
 

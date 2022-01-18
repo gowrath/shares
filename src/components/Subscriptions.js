@@ -14,22 +14,9 @@ function Subs() {
 
         </div>
         
+
+
         <div className="left">
-          <p>
-            Simple means paying less. Here's a sampling of what you might pay for every month or year: 
-          </p>
-
-          <ul>
-          <li>Netflix ($13.99 / mo)</li>
-          <li>Spotify ($9.99 / mo)</li>
-          <li>HBOMax ($14.99 / mo)</li>
-          <li>Disney Plus ($12.99 / mo)</li>
-          <li>Amazon Prime ($12.99 / mo)</li>
-          <li>Youtube Premium ($13.99 / mo)</li>
-          </ul>
-
-        </div>
-        <div className="write-center">
           <p>
             Costs add up. 
             <br />

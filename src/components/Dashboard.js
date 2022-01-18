@@ -42,11 +42,10 @@ function Dashboard() {
     // If the user is logged in, show the dashboard
     const userData = JSON.stringify(Userfront.user, null, 2);
     return (
-
-      <Route path="/">
-      <Subs />
-      </Route>
-
+    <div>
+      <h2>Dashboard</h2>
+      <pre>{userData}</pre>
+    </div>    
     );
   }
 

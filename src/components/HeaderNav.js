@@ -47,16 +47,13 @@ function Header(){
         <Link to="/subslist">Home</Link>
         </Col>
         <Col>
-        <Link to="/subs">Subs</Link>
+        <Link to="/subs">About</Link>
         </Col>
         <Col>
         <Link to="/login">Login</Link>
         </Col>
         <Col>
         <Link to="/reset">Reset</Link>
-        </Col>
-        <Col>
-        <Link to="/dashboard">Dashboard</Link>
         </Col>
         <Col>
         <div id="logout-button">

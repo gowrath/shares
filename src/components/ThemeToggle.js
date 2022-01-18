@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { FaSun, FaMoon} from "react-icons/fa";
 import { ThemeContext } from './ThemeContext';
 
@@ -22,4 +22,4 @@ const Toggle = () => {
     );
 };
 
-export default Toggle;
+export default Toggle; */

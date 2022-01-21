@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import {
-  BrowserRouter as Router,
+  //BrowserRouter as Router,
   Switch,
   Route,
   Link,
@@ -10,9 +10,7 @@ import {
 import { Container } from "react-bootstrap";
 import Userfront from "@userfront/react";
 import Login from "./Login";
-import Home from "./Home";
 import PasswordReset from "./PasswordReset";
-import Dashboard from "./Dashboard";
 import About from "./About";
 import AddSub from "./AddSub";
 import SubsList from "./SubsList";
@@ -21,17 +19,6 @@ import EditSub from "./EditSub";
 
 Userfront.init("jb747qn6");
 
-const SignupForm = Userfront.build({
-  toolId: "rlnkoa",
-});
-
-const LoginForm = Userfront.build({
-  toolId: "nrdlan",
-});
-
-const PasswordResetForm = Userfront.build({
-  toolId: "lobndm",
-});
 
 const LogoutButton = Userfront.build({
   toolId: "bldord",
@@ -96,9 +83,7 @@ function Header() {
         />
         <Route component={() => <Redirect to="/about" />} />
 
-        <Route path="/dashboard">
-          <Dashboard />
-        </Route>
+
         <Route path="/logout">
           <LogoutButton />
         </Route>

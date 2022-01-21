@@ -5,11 +5,6 @@ import SubForm from "./SubForm";
 import Userfront from "@userfront/react";
 
 
-Userfront.init("jb747qn6");
-
-const SignupForm = Userfront.build({
-  toolId: "rlnkoa",
-});
 
 const SubsList = ({ history, subs, setSubs }) => {
   const handleOnSubmit = (sub) => {

@@ -1,13 +1,4 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom";
-import { Container } from "react-bootstrap";
 import Userfront from "@userfront/react";
 
 Userfront.init("jb747qn6");

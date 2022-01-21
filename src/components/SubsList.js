@@ -90,10 +90,7 @@ const SubsList = ({ history, subs, setSubs }) => {
           </p>
         )}
       </div>
-      <div>
-      <h2 className="center">Sign Up Form</h2>
-      <SignupForm />
-      </div>
+
     </React.Fragment>
   );
 };

@@ -1,12 +1,4 @@
 import React from "react";
-import Userfront from "@userfront/react";
-
-
-Userfront.init("jb747qn6");
-
-const SignupForm = Userfront.build({
-  toolId: "rlnkoa",
-});
 
 function About() {
   return (
@@ -66,12 +58,6 @@ function About() {
           We operate within the ToS of every major service provider :)
         </p>
       </div>
-
-      <div>
-      <h2 className="center">Sign Up Form</h2>
-      <SignupForm />
-      </div>
-
     </div>
   );
 }

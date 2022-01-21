@@ -44,10 +44,10 @@ function Header() {
       <Container>
         <Row>
           <Col>
-            <Link to="/subslist">Home</Link>
+            <Link to="/about">About</Link>
           </Col>
           <Col>
-            <Link to="/about">About</Link>
+            <Link to="/subslist">Subs</Link>
           </Col>
           <Col>
             <Link to="/login">Login</Link>
@@ -78,7 +78,7 @@ function Header() {
           render={(props) => (
             <SubsList {...props} subs={subs} setSubs={setSubs} />
           )}
-          path="/home"
+          path="/subslist"
         />
 
         <Route
@@ -94,7 +94,7 @@ function Header() {
           )}
           path="/edit/:id"
         />
-        <Route component={() => <Redirect to="/home" />} />
+        <Route component={() => <Redirect to="/about" />} />
 
         <Route path="/dashboard">
           <Dashboard />
@@ -102,8 +102,8 @@ function Header() {
         <Route path="/logout">
           <LogoutButton />
         </Route>
-        <Route path="/home">
-          <Home />
+        <Route path="/about">
+          <About />
         </Route>
       </Switch>
     </div>

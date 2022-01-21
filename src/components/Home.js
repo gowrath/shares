@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import Userfront from "@userfront/react";
 
 Userfront.init("jb747qn6");
@@ -50,3 +50,4 @@ function Home() {
 }
 
 export default Home;
+ */

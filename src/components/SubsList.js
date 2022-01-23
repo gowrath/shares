@@ -2,7 +2,6 @@ import React from "react";
 import _ from "lodash";
 import Sub from "./Sub";
 import SubForm from "./SubForm";
-import Userfront from "@userfront/react";
 
 
 
@@ -72,6 +71,7 @@ const SubsList = ({ history, subs, setSubs }) => {
           <li>Disney Plus ($12.99 / mo)</li>
           <li>Amazon Prime ($12.99 / mo)</li>
           <li>Youtube Premium ($13.99 / mo)</li>
+          <li>Hulu ($5.99 / mo)</li>
         </ul>
 
         <SubForm handleOnSubmit={handleOnSubmit} />

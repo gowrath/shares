@@ -13,6 +13,14 @@ function About() {
     <div>
       <h2 className="center">Subscriptions</h2>
 
+
+      <div>
+      
+      <SignupForm />
+      <br />
+      <br />
+
+      </div>
       <div className="center">
         <img
           src={require("./carousel-3.jpg").default}
@@ -23,9 +31,11 @@ function About() {
         />
       </div>
 
-      <div className="left">
+      <div className="center">
         <p>
-          Costs add up.
+          <br />
+          <br />
+          Subscription costs add up.
           <br />
           
           <br />
@@ -48,8 +58,8 @@ function About() {
           *Friend tries their best to explain*
           <br />
           <br />
-          Assuming you're not a psychopath, you would like to share 'subs' with
-          your friend.
+          You'd like to share 'subs' with
+          your friend without bothering them.
           <br />
           <br />
           This is the technological solution to communicatory problems around
@@ -67,10 +77,7 @@ function About() {
         </p>
       </div>
 
-      <div>
-      <h2 className="center">Sign Up Form</h2>
-      <SignupForm />
-      </div>
+      
 
     </div>
   );

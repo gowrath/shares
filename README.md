@@ -21,7 +21,7 @@ https://sharesub-5c6f8.web.app/
 Technologies used:
 
 1. React Hooks
-2. React-Router
-3. localStorage (for CRUD functionality)
-4. Userfront Authentication
-5. Firebase Hosting
+2. React-Router (v.5; still uses Switch instead of Routes)
+4. localStorage (for CRUD functionality)
+5. Userfront Authentication
+6. Firebase Hosting

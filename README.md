@@ -1,7 +1,7 @@
 
 # Share Subscriptions
 
-A tool to help you calculate the cost of your monthly subscriptions. 
+A tool to help you calculate and add the cost of your monthly subscriptions. 
 
 Digital subscriptions are ubiqitous. So is overpaying for them while a friend has one you need. Why not take advantage of 'friends and family' sharing policies of such services? Sharesub is the solution to this problem.
 

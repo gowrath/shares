@@ -18,10 +18,11 @@ https://sharesub-5c6f8.web.app/
 
 <img width="716" alt="image" src="https://user-images.githubusercontent.com/18095228/149642781-6da3a148-d588-4384-b5c8-32a84bcccd39.png">
 
-Technologies used:
+Technologies used (created from scratch):
 
 1. React Hooks
 2. React-Router (v.5; still uses Switch instead of Routes)
 4. localStorage (for CRUD functionality to operate without a database. Refreshing the page will keep data in local storage, unlike cookies which are not persistent.
 5. Userfront Authentication
 6. Firebase Hosting
+

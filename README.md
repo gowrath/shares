@@ -1,7 +1,7 @@
 
 # Share Subscriptions
 
-A tool to help you calculate the cost of your monthly subscriptions. 
+A tool to help you calculate and add the cost of your monthly subscriptions. 
 
 Digital subscriptions are ubiqitous. So is overpaying for them while a friend has one you need. Why not take advantage of 'friends and family' sharing policies of such services? Sharesub is the solution to this problem.
 
@@ -18,10 +18,11 @@ https://sharesub-5c6f8.web.app/
 
 <img width="716" alt="image" src="https://user-images.githubusercontent.com/18095228/149642781-6da3a148-d588-4384-b5c8-32a84bcccd39.png">
 
-Technologies used:
+Technologies used (created from scratch):
 
 1. React Hooks
 2. React-Router (v.5; still uses Switch instead of Routes)
-4. localStorage (for CRUD functionality)
+4. localStorage (for CRUD functionality to operate without a database. Refreshing the page will keep data in local storage, unlike cookies which are not persistent.
 5. Userfront Authentication
 6. Firebase Hosting
+

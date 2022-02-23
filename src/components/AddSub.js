@@ -4,7 +4,7 @@ import SubForm from "./SubForm";
 const AddSub = ({ history, subs, setSubs }) => {
   const handleOnSubmit = (sub) => {
     setSubs([sub, ...subs]);
-    history.push("/subslist");
+    history.push("/projects");
   };
 
   return (

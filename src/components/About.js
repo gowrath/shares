@@ -32,49 +32,7 @@ function About() {
       </div>
 
       <div className="center">
-        <p>
-          <br />
-          <br />
-          Subscription costs add up.
-          <br />
-          
-          <br />
-          
-          <br />
-          
-          <br />
-          So does your patience.
-          <br />
-          <br />
-          A friend mentions they have Netflix.
-          <br />
-          <br />
-          An awkward moment ensues.
-          <br />
-          <br />
-          'You did? How come you didn't tell me?'
-          <br />
-          <br />
-          *Friend tries their best to explain*
-          <br />
-          <br />
-          You'd like to share 'subs' with
-          your friend without bothering them.
-          <br />
-          <br />
-          This is the technological solution to communicatory problems around
-          subscriptions and sharing.
-          <br />
-          <br />
-          <b>Share costs.</b>
-          <br />
-          <b>Manage credentials.</b>
-          <br />
-          <b>Keep up-to-date with shows.</b>
-          <br />
-          <br />
-          We operate within the ToS of every major service provider :)
-        </p>
+
       </div>
 
       

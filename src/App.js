@@ -6,17 +6,21 @@ import HeaderNav from "./components/HeaderNav";
 export default function App() {
   return (
     <Router>
-      <div className="bg-white">
-        <h1 className="center">ShareSub, Inc.</h1>
+      <div
+        style={{
+          backgroundColor: '00643A',
+          height: "1200px",
+        }}
+      >
+
+
+        <h1 className="center">Hi, I'm John</h1>
 
         <div>
-          <p className="center">Your service for all things sharing.</p>
+          <p className="center">A frontend developer</p>
           <br />
         </div>
-
         <HeaderNav />
-
-
       </div>
     </Router>
   );

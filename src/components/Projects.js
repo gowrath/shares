@@ -5,10 +5,10 @@ import SubForm from "./SubForm";
 
 
 
-const SubsList = ({ history, subs, setSubs }) => {
+const Projects = ({ history, subs, setSubs }) => {
   const handleOnSubmit = (sub) => {
     setSubs([sub, ...subs]);
-    history.push("/subslist");
+    history.push("/projects");
   };
 
   const handleRemoveSub = (id) => {
@@ -17,33 +17,33 @@ const SubsList = ({ history, subs, setSubs }) => {
 
   return (
     <React.Fragment>
-      <div className="center">
+      <div>
         <div></div>
 
-        <div className="center">
+        <div>
           <p>
             <br></br>
-            Modern life and subscriptions. Necessary?
+            
             <br></br>
-            What if sharing were a bit easier? What if sharing led to
-            connection?
+
           </p>
         </div>
 
         <div className="center">
           <img
             src={require("./carousel-1.jpg").default}
-            width="300"
+            width="150"
             height="150"
             style={{ alignSelf: "center" }}
-            alt="subscription example"
+            alt="profile photo"
           />
+                      <br></br>
+            <br></br>
         </div>
 
         <div className="write-center">
           <p>
-            What if life were a bit simpler? If you could share what you loved
-            with friends?
+            Here are some samples of my work.
           </p>
         </div>
 
@@ -60,19 +60,9 @@ const SubsList = ({ history, subs, setSubs }) => {
 
       <div className="left">
         <p>
-          Simple means paying less. Here's a sampling of what you might pay for
-          every month or year:
+
         </p>
 
-        <ul>
-          <li>Netflix ($13.99 / mo)</li>
-          <li>Spotify ($9.99 / mo)</li>
-          <li>HBOMax ($14.99 / mo)</li>
-          <li>Disney Plus ($12.99 / mo)</li>
-          <li>Amazon Prime ($12.99 / mo)</li>
-          <li>Youtube Premium ($13.99 / mo)</li>
-          <li>Hulu ($5.99 / mo)</li>
-        </ul>
 
         <SubForm handleOnSubmit={handleOnSubmit} />
         {!_.isEmpty(subs) ? (
@@ -90,4 +80,4 @@ const SubsList = ({ history, subs, setSubs }) => {
   );
 };
 
-export default SubsList;
+export default Projects;

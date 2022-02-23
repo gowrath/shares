@@ -9,7 +9,7 @@ const EditSub = ({ history, subs, setSubs }) => {
   const handleOnSubmit = (sub) => {
     const filteredSubs = subs.filter((sub) => sub.id !== id);
     setSubs([sub, ...filteredSubs]);
-    history.push("/subslist");
+    history.push("/projects");
   };
 
   return (

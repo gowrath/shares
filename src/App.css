@@ -35,6 +35,7 @@
 }
 
 
+
 .sub-list {
   display: flex;
   flex-wrap: wrap;
@@ -88,6 +89,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  padding-top: 15px
 }
 
 .left {
@@ -108,9 +110,9 @@
   padding: 10px 50px 10px 50px;
 }
 
-/* #logout-button {
-  background-color: white;
-  color: white;
+.logout-button {
+  background-color: black;
+  color: black;
   border: black;
   padding: 5px 10px;
   vertical-align: text-top;
@@ -131,24 +133,26 @@
 }
 
 .sidebar {
-  padding: 6px 8px 6px 16px;
+
   text-decoration: none;
   font-size: 25px;
   color: #818181;
-  display: block;
-}
-
-.sidebar {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 100px; /* Set the width of the sidebar */
-  position: relative; /* Fixed Sidebar (stay in place on scroll) */
+  display: flex;
+  position: relative;
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
-  left: 0;
-  background-color: white; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
+} 
+
+
+.navbarClass {
+  color: black;
+  background-color:#f1e3dd;
+  height: 125px;
+  align-items: center;
+  padding-left: 20px
 }
+
+
 
 
 .klass-card-deck-style {
@@ -209,15 +213,12 @@ a:active {
 /*changes the text of the seating chart names*/
 
 .card-text{
-  color: black;
+  color: skyblue;
 }
 
 /*NavBar Color changed to lighter black*/
 
-.navbarClass {
-  color: white;
-  background-color:#0B0B45;
-}
+
 
 .navBar-nav{
   background-color: yellow;
@@ -245,7 +246,7 @@ a:active {
   font-size: 1.5rem;
   font-family: 'Luxurious Roman', sans-serif;
   background-color:#0B0B45;
-  color: white;
+  color:black;
 }
 
 

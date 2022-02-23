@@ -7,7 +7,7 @@ function Subs() {
   return (
     <div>
 
-    <h2 className="center">Subscriptions</h2>
+    <h2 className="center">Projects</h2>
     
     <div className="center">    
 

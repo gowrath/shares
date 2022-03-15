@@ -18,7 +18,7 @@ https://sharesub-5c6f8.web.app/
 
 <img width="716" alt="image" src="https://user-images.githubusercontent.com/18095228/149642781-6da3a148-d588-4384-b5c8-32a84bcccd39.png">
 
-Technologies used (created from scratch):
+Technologies used (created/provided from scratch):
 
 1. React Hooks
 2. React-Router (v.5; still uses Switch instead of Routes)

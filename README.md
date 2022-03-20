@@ -1,7 +1,7 @@
 
 # Share Subscriptions
 
-This is a tool written in React to help you calculate and add the cost of your monthly subscriptions. 
+This is a tool built in the React framework to help you calculate and add the cost of your monthly subscriptions. 
 
 Digital subscriptions are ubiqitous. So is overpaying for them while a friend has one you need. Why not take advantage of 'friends and family' sharing policies of such services? Sharesub is the solution to this problem.
 

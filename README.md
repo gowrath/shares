@@ -8,7 +8,7 @@ Digital subscriptions are ubiqitous. So is overpaying for them while a friend ha
 It is: 
 
 1) A site to share information with friends about the subscriptions you have and they do not.
-2) A portal service to share the latest hot TV show or movie (sort by relevance and topical)
+2) A portal service to share the latest hot TV show or movie (sort by relevance and topical).
 3) A cost calculator to figure out how much you are spending per month. 
 
 The cost calculator is a web scraper from the various subscription websites: Netflix, HBO, Disney Plus.

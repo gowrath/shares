@@ -1,5 +1,5 @@
 
-# Share Subscriptions
+# Share Subscriptions Application
 
 This is a tool built in the React framework to help you manage, calculate and add the costs of your monthly subscriptions. 
 

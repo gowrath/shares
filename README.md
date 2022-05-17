@@ -26,4 +26,4 @@ Technologies used (created/provided from scratch):
 4. Userfront Authentication
 5. Firebase Hosting
 
-Thanks. 
+Thank you for reading.

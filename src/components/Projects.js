@@ -2,7 +2,7 @@ import React from "react";
 import _ from "lodash";
 import Sub from "./Sub";
 import SubForm from "./SubForm";
-import nodes from './subs.json';
+import fakeApiData from './data/subs.json';
 
 
 const Projects = ({ history, subs, setSubs }) => {
@@ -66,7 +66,7 @@ const Projects = ({ history, subs, setSubs }) => {
           )}
 
         <div>
-          const subprices = data.subprices.nodes;
+          const subprices = fakeApiData.data.subprices.nodes;
 
           console.log(subprices)
         </div>

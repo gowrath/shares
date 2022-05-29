@@ -2,7 +2,7 @@ import React from "react";
 import _ from "lodash";
 import Sub from "./Sub";
 import SubForm from "./SubForm";
-import data from '../subs.json';
+import nodes from './subs.json';
 
 
 const Projects = ({ history, subs, setSubs }) => {
@@ -23,7 +23,7 @@ const Projects = ({ history, subs, setSubs }) => {
         <div>
           <p>
             <br></br>
-            
+
             <br></br>
 
           </p>
@@ -60,12 +60,17 @@ const Projects = ({ history, subs, setSubs }) => {
             <Sub key={sub.id} {...sub} handleRemoveSub={handleRemoveSub} />
           ))
         ) : (
-          <p className="left">
-            No subs available. Please add some subscriptions.
+            <p className="left">
+              No subs available. Please add some subscriptions.
           </p>
-        )}
+          )}
 
-const subprice = subprice.nodes
+        <div>
+          const subprices = data.subprices.nodes;
+
+          console.log(subprices)
+        </div>
+
 
       </div>
 

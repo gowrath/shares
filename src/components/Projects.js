@@ -2,7 +2,7 @@ import React from "react";
 import _ from "lodash";
 import Sub from "./Sub";
 import SubForm from "./SubForm";
-
+import data from '../subs.json';
 
 
 const Projects = ({ history, subs, setSubs }) => {
@@ -29,21 +29,11 @@ const Projects = ({ history, subs, setSubs }) => {
           </p>
         </div>
 
-        <div className="center">
-          <img
-            src={require("./carousel-1.jpg").default}
-            width="150"
-            height="150"
-            style={{ alignSelf: "center" }}
-            alt="profile photo"
-          />
-                      <br></br>
-            <br></br>
-        </div>
+
 
         <div className="write-center">
           <p>
-            Here are some samples of my work.
+            Here is a subscription application.
           </p>
         </div>
 
@@ -74,6 +64,9 @@ const Projects = ({ history, subs, setSubs }) => {
             No subs available. Please add some subscriptions.
           </p>
         )}
+
+const subprice = subprice.nodes
+
       </div>
 
     </React.Fragment>

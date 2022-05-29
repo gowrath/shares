@@ -144,12 +144,13 @@
 } 
 
 
-.navbarClass {
+.navbar {
   color: black;
-  background-color:#f1e3dd;
-  height: 125px;
+  background-color:#ffffff;
+  height: 60px;
   align-items: center;
-  padding-left: 20px
+  justify-content: center;
+  padding: 20px
 }
 
 

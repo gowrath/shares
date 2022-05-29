@@ -11,7 +11,7 @@ const SignupForm = Userfront.build({
 function About() {
   return (
     <div>
-      <h2 className="center">Subscriptions</h2>
+      <h2 className="center">About</h2>
 
 
       <div>

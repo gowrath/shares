@@ -14,10 +14,10 @@ export default function App() {
       >
 
 
-        <h1 className="center">Hi, I'm John</h1>
+        <h1 className="center">ShareSub</h1>
 
         <div>
-          <p className="center">A frontend developer</p>
+          <p className="center">A fullstack application</p>
           <br />
         </div>
         <HeaderNav />

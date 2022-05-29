@@ -26,25 +26,27 @@ const LogoutButton = Userfront.build({
 function Header() {
   const [subs, setSubs] = useLocalStorage("subs", []);
   return (
-    <div>
-
-      <Navbar className="navbarClass" expand="md" variant="light">
-
-      <div>
-          <Col>
-            <Link to="/projects">Projects</Link>
-          </Col>
-          <Col>
-            <Link to="/about">About</Link>
-          </Col>
-
-        </div>
-      </Navbar>
+  <div>
+  <nav class="navbar navbar-light">
 
 
-      <Container>
+      <div class="card">
+        <Link to="/projects">Projects</Link>
+      </div>
+      <div class="card">
+        <Link to="/about">About</Link>
+      </div>
+      <div class="card">
+        <Link to="/sub">Subscriptions</Link>
+      </div>
+      <div class="card">
+        <Link to="/login">Login</Link>
+      </div>
 
-      </Container>
+    </nav>
+
+
+
 
       <Switch>
         <Route path="/login">
@@ -84,7 +86,7 @@ function Header() {
         </Route>
       </Switch>
 
-    </div>
+      </div>
   );
 }
 

@@ -1,17 +1,11 @@
-
 {
-  "name": "subprices",
-  "netflix": {
-    "monthly": "13.99"
-
-  },
-  "hulu": {
-    "monthly": "9.99",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "tailwindcss": "^1.9.6"
+  "data": "subprices": 
+  {
+    "nodes": [
+      {
+        "netflix": "13.99",
+        "hulu": "9.99"
+      }
+    ]
   }
 }

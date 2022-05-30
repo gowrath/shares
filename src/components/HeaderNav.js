@@ -16,6 +16,8 @@ import AddSub from "./AddSub";
 import Projects from "./Projects";
 import useLocalStorage from "../hooks/useLocalStorage";
 import EditSub from "./EditSub";
+import Ballot from "./Ballot";
+import Subscriptions from "./Subscriptions"
 
 Userfront.init("jb747qn6");
 
@@ -26,32 +28,36 @@ const LogoutButton = Userfront.build({
 function Header() {
   const [subs, setSubs] = useLocalStorage("subs", []);
   return (
-  <div>
-  <nav class="navbar navbar-light">
-
-
-      <div class="card">
-        <Link to="/projects">Projects</Link>
-      </div>
-      <div class="card">
-        <Link to="/about">About</Link>
-      </div>
-      <div class="card">
-        <Link to="/sub">Subscriptions</Link>
-      </div>
-      <div class="card">
-        <Link to="/login">Login</Link>
-      </div>
-
-    </nav>
-
-
-
+    <div>
+      <nav className="navbar navbar-light">
+        <div className="card">
+          <Link to="/projects">Projects</Link>
+        </div>
+        <div className="card">
+          <Link to="/about">About</Link>
+        </div>
+        <div className="card">
+          <Link to="/subscriptions">Subscriptions</Link>
+        </div>
+        <div className="card">
+          <Link to="/login">Login</Link>
+        </div>
+        <div className="card">
+          <Link to="/ballot">Ballot</Link>
+        </div>
+      </nav>
 
       <Switch>
         <Route path="/login">
           <Login />
         </Route>
+        <Route path="/ballot">
+          <Ballot />
+        </Route>
+        <Route path="/subscriptions">
+          <Subscriptions />
+        </Route>
+
         <Route path="/reset">
           <PasswordReset />
         </Route>
@@ -85,8 +91,7 @@ function Header() {
           <About />
         </Route>
       </Switch>
-
-      </div>
+    </div>
   );
 }
 

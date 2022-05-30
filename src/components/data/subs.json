@@ -1,12 +1,14 @@
 {
   "data": {
     "subprices": {
-        "nodes": [
-          {
+      "nodes": [
+        {
+          "services": {
             "netflix": "13.99",
             "hulu": "9.99"
           }
-        ]
-      }
+        }
+      ]
     }
   }
+}

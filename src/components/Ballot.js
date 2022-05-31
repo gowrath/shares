@@ -19,6 +19,8 @@ function App() {
 
   console.log(subprices);
 
+
+
   /*   const sortedOfficerholders = subprices.sort(
           (a, b) => a.position.rowOrder - b.position.rowOrder
         );
@@ -29,7 +31,7 @@ function App() {
       <thead>
         <tr>
           <th scope="col">Name</th>
-          <th scope="col">Price</th>
+          <th data-field="money">Price</th>
           <th scope="col">Monthly?</th>
         </tr>
       </thead>
@@ -38,26 +40,21 @@ function App() {
         {subprices.map((nodes, idx) => {
           return (
             <tr key={idx}>
-              <td>Netflix</td>
-              <td>{nodes.services.netflix}</td>
-  
+              <td>{nodes.service.fullName}</td>
+              <td>{nodes.service.price}</td>
+              <td>{nodes.service.monthly}</td>
             </tr>
           );
         })}
       </tbody>
 
-      <tbody>
-        {subprices.map((nodes, idx) => {
-          return (
-            <tr key={idx}>
-              <td>Hulu</td>
-              <td>{nodes.services.hulu}</td>
-            </tr>
-          );
-        })}
-      </tbody>  
-
-
+      <tfoot>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tfoot>
     </table>
   );
 }

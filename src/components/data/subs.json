@@ -7,7 +7,8 @@
           "service": {
             "id": "Z2lkOi8vYmFsbG90LWZhY3RvcnkvQ2FuZGlkYXRlLzMyNTI4Mw==",
             "fullName": "Netflix",
-            "price": "13.99"
+            "price": "15.49",
+            "monthly":"Yes"
           }
         },
         {
@@ -15,7 +16,8 @@
           "service": {
             "id": "sadfasvYmFsbG90LWZhY3RvcnkvQ2FuZGlkYXRlLzMyNTI4Mw==",
             "fullName": "Hulu",
-            "price": "9.99"
+            "price": "6.99",
+            "monthly":"Yes"
           }
         },
         {
@@ -23,7 +25,8 @@
           "service": {
             "id": "Z2lkOi8sadfasG90LWZhY3RvcnkvQ2FuZGlkYXRlLzMyNTI4Mw==",
             "fullName": "Disney Plus",
-            "price": "9.99"
+            "price": "7.99",
+            "monthly":"Yes"
           }
         }
       ]

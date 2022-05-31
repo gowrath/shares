@@ -16,7 +16,7 @@ import AddSub from "./AddSub";
 import Projects from "./Projects";
 import useLocalStorage from "../hooks/useLocalStorage";
 import EditSub from "./EditSub";
-import Ballot from "./Ballot";
+import Costs from "./Costs";
 import Subscriptions from "./Subscriptions"
 
 Userfront.init("jb747qn6");
@@ -29,30 +29,30 @@ function Header() {
   const [subs, setSubs] = useLocalStorage("subs", []);
   return (
     <div>
-      <nav className="navbar navbar-light">
-        <div className="card">
+      <nav className="navbar navbar-light bg-warning">
+      <ul class="navbar-nav">
           <Link to="/projects">Projects</Link>
-        </div>
-        <div className="card">
+        </ul>
+        <ul class="navbar-nav">
           <Link to="/about">About</Link>
-        </div>
-        <div className="card">
+        </ul>
+        <ul class="navbar-nav">
           <Link to="/subscriptions">Subscriptions</Link>
-        </div>
-        <div className="card">
+        </ul>
+        <ul class="navbar-nav">
           <Link to="/login">Login</Link>
-        </div>
-        <div className="card">
-          <Link to="/ballot">Ballot</Link>
-        </div>
+        </ul>
+        <ul class="navbar-nav">
+          <Link to="/costs">Costs</Link>
+        </ul>
       </nav>
 
       <Switch>
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/ballot">
-          <Ballot />
+        <Route path="/costs">
+          <Costs />
         </Route>
         <Route path="/subscriptions">
           <Subscriptions />

@@ -23,12 +23,40 @@
         {
           "id": "ZsdfasdsbG90LWZhY3RvcnkvT2ZmaWNlSG9sZGVyLzQ4NDA0",
           "service": {
-            "id": "Z2lkOi8sadfasG90LWZhY3RvcnkvQ2FuZGlkYXRlLzMyNTI4Mw==",
+            "id": "Z2lkOi8sadfasG90LWZhY2123123LzMyNTI4Mw==",
             "fullName": "Disney Plus",
             "price": "7.99",
             "monthly":"Yes"
           }
+        },
+        {
+          "id": "Zsdfwqr233Rvcn12312312LzQ4NDA0",
+          "service": {
+            "id": "Z2lkOi8sadfasG90LWds23423LzMyNTI4Mw==",
+            "fullName": "Spotify",
+            "price": "9.99",
+            "monthly":"Yes"
+          }
+        },
+        {
+          "id": "ZsdfasdsbG34rwaervT2Z23423V23423yLzQ4NDA0",
+          "service": {
+            "id": "Z2lkOi8sadfasG90LWZ234322FuZGlkYXRlLzMyNTI4Mw==",
+            "fullName": "Amazon Prime",
+            "price": "12.99",
+            "monthly":"Charged Yearly"
+          }
+        },
+        {
+          "id": "ZsdfasdsbG9234234234zQ4NDA0",
+          "service": {
+            "id": "Z2lkOi8sadfasG9234234232lLzMyNTI4Mw==",
+            "fullName": "Youtube Premium",
+            "price": "13.99",
+            "monthly":"Yes"
+          }
         }
+
       ]
     }
   }

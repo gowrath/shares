@@ -17,7 +17,16 @@ function App() {
    * following line to check it out in the browser console:
    */
 
-  console.log(subprices);
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -49,11 +58,28 @@ function App() {
       </tbody>
 
       <tfoot>
+
+
+
+
         <tr>
           <td></td>
-          <td></td>
+          <td>
+            <button onClick={() => {
+              console.log("it works");
+
+            }}
+
+
+            >Sum</button>
+
+
+          </td>
           <td></td>
         </tr>
+
+
+
       </tfoot>
     </table>
   );

@@ -5,7 +5,20 @@ import { Button, ButtonGroup } from "react-bootstrap";
 import { useState } from "react";
 
 function App() {
-  const subprices = fakeApiData.data.subprices.nodes;
+
+  
+
+  const subscriptprices = fakeApiData.data.subprices.nodes;
+
+  //const [priceSum, setPriceSum] = useState(subscriptprices);
+  
+
+  // let sum1 = Object.values(subscriptprices);
+  let sum2 = subscriptprices.reduce((acc,currentValue)=>
+  acc + currentValue.price, 0);
+  
+  
+
 
   /**
    * Hi! We've set you up with a fake dataset in the variable `officeholders`.
@@ -46,7 +59,7 @@ function App() {
       </thead>
 
       <tbody>
-        {subprices.map((nodes, idx) => {
+        {subscriptprices.map((nodes, idx) => {
           return (
             <tr key={idx}>
               <td>{nodes.service.fullName}</td>
@@ -60,23 +73,40 @@ function App() {
       <tfoot>
 
 
-
+  
 
         <tr>
-          <td></td>
+
+        
+
+          
+          
+          
+
           <td>
-            <button onClick={() => {
-              console.log("it works");
 
-            }}
-
-
-            >Sum</button>
-
+          </td>
+          <td>
+          
+          <Button>
+                  <a onClick={() => console.log(sum2)
+                  
+                
+                
+                }>
+                    Here
+                  </a>
+                </Button>
+      
 
           </td>
           <td></td>
+
+
+         
+
         </tr>
+
 
 
 

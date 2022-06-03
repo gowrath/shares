@@ -30,19 +30,19 @@ function Header() {
   return (
     <div>
       <nav className="navbar navbar-light bg-warning">
-      <ul class="navbar-nav">
+      <ul className="navbar-nav">
           <Link to="/projects">Projects</Link>
         </ul>
-        <ul class="navbar-nav">
+        <ul className="navbar-nav">
           <Link to="/about">About</Link>
         </ul>
-        <ul class="navbar-nav">
+        <ul className="navbar-nav">
           <Link to="/subscriptions">Subscriptions</Link>
         </ul>
-        <ul class="navbar-nav">
+        <ul className="navbar-nav">
           <Link to="/login">Login</Link>
         </ul>
-        <ul class="navbar-nav">
+        <ul className="navbar-nav">
           <Link to="/costs">Costs</Link>
         </ul>
       </nav>

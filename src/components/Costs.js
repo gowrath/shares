@@ -14,8 +14,15 @@ function App() {
   
 
   // let sum1 = Object.values(subscriptprices);
-  let sum2 = subscriptprices.reduce((acc,currentValue)=>
-  acc + currentValue.price, 0);
+
+let totalPrice = 0
+
+  let sum2 = subscriptprices.map((nodes, idx) => {
+
+    totalPrice += parseFloat(nodes.service.price)
+    return totalPrice
+  })
+  
   
   
 
@@ -94,7 +101,7 @@ function App() {
                 
                 
                 }>
-                    Here
+                    {totalPrice}
                   </a>
                 </Button>
       

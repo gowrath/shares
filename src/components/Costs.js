@@ -5,27 +5,18 @@ import { Button, ButtonGroup } from "react-bootstrap";
 import { useState } from "react";
 
 function App() {
-
-  
-
   const subscriptprices = fakeApiData.data.subprices.nodes;
 
-  //const [priceSum, setPriceSum] = useState(subscriptprices);
-  
+  const [priceSum, setPriceSum] = useState();
 
   // let sum1 = Object.values(subscriptprices);
 
-let totalPrice = 0
+  let totalPrice = 0;
 
   let sum2 = subscriptprices.map((nodes, idx) => {
-
-    totalPrice += parseFloat(nodes.service.price)
-    return totalPrice
-  })
-  
-  
-  
-
+    totalPrice += parseFloat(nodes.service.price);
+    return totalPrice;
+  });
 
   /**
    * Hi! We've set you up with a fake dataset in the variable `officeholders`.
@@ -36,19 +27,6 @@ let totalPrice = 0
    * Want to see what this data looks like? Check out the JSON file in the `data` folder or use the
    * following line to check it out in the browser console:
    */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   /*   const sortedOfficerholders = subprices.sort(
           (a, b) => a.position.rowOrder - b.position.rowOrder
@@ -70,7 +48,23 @@ let totalPrice = 0
           return (
             <tr key={idx}>
               <td>{nodes.service.fullName}</td>
-              <td>{nodes.service.price}</td>
+              <td>
+                <Button
+                onClick={() => {
+                  setPriceSum (subscriptprices[idx])
+
+                }
+              }
+                
+                
+                
+                >
+                
+                {nodes.service.price}
+                
+                </Button>
+                
+                </td>
               <td>{nodes.service.monthly}</td>
             </tr>
           );
@@ -78,48 +72,20 @@ let totalPrice = 0
       </tbody>
 
       <tfoot>
-
-
-  
-
         <tr>
-
-        
-
-          
-          
-          
-
+          <td></td>
           <td>
-
-          </td>
-          <td>
-          
-          <Button>
-                  <a onClick={() => console.log(sum2)
-                  
-                
-                
-                }>
-                    {totalPrice}
-                  </a>
-                </Button>
-      
-
+            <Button>
+              <a onClick={() => console.log(sum2)}>{totalPrice}</a>
+            </Button>
           </td>
           <td></td>
-
-
-         
-
         </tr>
-
-
-
-
       </tfoot>
     </table>
   );
 }
+
+
 
 export default App;

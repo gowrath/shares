@@ -12,11 +12,24 @@ function App() {
   // let sum1 = Object.values(subscriptprices);
 
   let totalPrice = 0;
+ 
 
-  let sum2 = subscriptprices.map((nodes, idx) => {
+/*   let sum2 = subscriptprices.map((nodes, idx) => {
     totalPrice += parseFloat(nodes.service.price);
     return totalPrice;
-  });
+  }); */
+
+  /* const handleButtonChange = () =>{
+
+    let sum2 = subscriptprices.map((nodes, idx) => {
+      totalPrice += parseFloat(nodes.service.price);
+      return totalPrice;
+    });
+
+
+
+  } */
+  
 
   /**
    * Hi! We've set you up with a fake dataset in the variable `officeholders`.
@@ -50,21 +63,20 @@ function App() {
               <td>{nodes.service.fullName}</td>
               <td>
                 <Button
-                onClick={() => {
-                  setPriceSum (subscriptprices[idx])
+                  onClick={()=>
+                 
 
-                }
-              }
-                
-                
-                
+                    totalPrice += parseFloat(nodes.service.price)
+
+                  
+                  }
+                  
+                  
+                   
                 >
-                
-                {nodes.service.price}
-                
+                  {nodes.service.price}
                 </Button>
-                
-                </td>
+              </td>
               <td>{nodes.service.monthly}</td>
             </tr>
           );
@@ -75,8 +87,7 @@ function App() {
         <tr>
           <td></td>
           <td>
-            <Button>
-              <a onClick={() => console.log(sum2)}>{totalPrice}</a>
+            <Button onClick={()=>console.log(totalPrice)}>Here
             </Button>
           </td>
           <td></td>
@@ -85,6 +96,10 @@ function App() {
     </table>
   );
 }
+
+
+
+
 
 
 

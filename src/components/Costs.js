@@ -7,9 +7,16 @@ import { useState } from "react";
 function App() {
   const subscriptprices = fakeApiData.data.subprices.nodes;
 
+  const handleClick = (e) => {
+    
+    setPriceSum(priceSum + e);
+    //setDisabled(true);
+   
+  };
+
   const [priceSum, setPriceSum] = useState(0);
 
-  const [disable, setDisable] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   return (
     <table className="table">
@@ -27,11 +34,9 @@ function App() {
             <tr key={idx}>
               <td>{nodes.service.fullName}</td>
               <td>
-                <button disabled={disable} onClick={() =>
-                  
-                    setPriceSum(priceSum + parseFloat(nodes.service.price))
-                   
-                  }
+                <button value={nodes.service.price}
+                //disabled = {disabled}
+                onClick={e => handleClick(parseFloat(e.target.value))}
                 >
                   {nodes.service.price}
                 </button>

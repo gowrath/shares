@@ -7,16 +7,14 @@ import { useState } from "react";
 function App() {
   const subscriptprices = fakeApiData.data.subprices.nodes;
 
-  const [priceSum, setPriceSum] = useState();
+  const [priceSum, setPriceSum] = useState(0);
 
   // let sum1 = Object.values(subscriptprices);
 
-  let totalPrice = 0;
- 
+  //let totalPrice = 0;
 
-/*   let sum2 = subscriptprices.map((nodes, idx) => {
-    totalPrice += parseFloat(nodes.service.price);
-    return totalPrice;
+  /*  let sum = subscriptprices.map((nodes, idx) => {
+    parseFloat(nodes.service.price);
   }); */
 
   /* const handleButtonChange = () =>{
@@ -29,7 +27,6 @@ function App() {
 
 
   } */
-  
 
   /**
    * Hi! We've set you up with a fake dataset in the variable `officeholders`.
@@ -63,16 +60,9 @@ function App() {
               <td>{nodes.service.fullName}</td>
               <td>
                 <Button
-                  onClick={()=>
-                 
-
-                    totalPrice += parseFloat(nodes.service.price)
-
-                  
+                  onClick={() =>
+                    setPriceSum(priceSum + parseFloat(nodes.service.price))
                   }
-                  
-                  
-                   
                 >
                   {nodes.service.price}
                 </Button>
@@ -87,8 +77,7 @@ function App() {
         <tr>
           <td></td>
           <td>
-            <Button onClick={()=>console.log(totalPrice)}>Here
-            </Button>
+            <Button>{Math.round(priceSum*100)/100}</Button>
           </td>
           <td></td>
         </tr>
@@ -96,11 +85,5 @@ function App() {
     </table>
   );
 }
-
-
-
-
-
-
 
 export default App;

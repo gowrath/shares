@@ -7,16 +7,25 @@ import { useState } from "react";
 function App() {
   const subscriptprices = fakeApiData.data.subprices.nodes;
 
-  const handleClick = (e) => {
+
+
+  const handleClick = (id) => {
     
-    setPriceSum(priceSum + e);
-    //setDisabled(true);
+    setPriceSum(priceSum + id);
+
+    
+  
+        //setDisabledButton(true);
+      
+
+    
+    
    
   };
 
   const [priceSum, setPriceSum] = useState(0);
 
-  const [disabled, setDisabled] = useState(false);
+  const [disabledButton, setDisabledButton] = useState(false);
 
   return (
     <table className="table">
@@ -30,12 +39,15 @@ function App() {
 
       <tbody>
         {subscriptprices.map((nodes, idx) => {
+          const id = 'b${nodes.service.id}';
           return (
             <tr key={idx}>
               <td>{nodes.service.fullName}</td>
               <td>
-                <button value={nodes.service.price}
-                //disabled = {disabled}
+                <button 
+                id={id}
+                value={nodes.service.price}
+                disabled = {disabledButton}
                 onClick={e => handleClick(parseFloat(e.target.value))}
                 >
                   {nodes.service.price}

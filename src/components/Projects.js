@@ -48,10 +48,7 @@ const Projects = ({ history, subs, setSubs }) => {
         </div>
       </div>
 
-      <div className="left">
-        <p>
 
-        </p>
 
 
         <SubForm handleOnSubmit={handleOnSubmit} />
@@ -65,14 +62,9 @@ const Projects = ({ history, subs, setSubs }) => {
           </p>
           )}
 
-        <div>
-          const subprices = fakeApiData.data.subprices.nodes;
-
-          console.log(subprices)
-        </div>
 
 
-      </div>
+      
 
     </React.Fragment>
   );

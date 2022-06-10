@@ -29,23 +29,23 @@ function Header() {
   const [subs, setSubs] = useLocalStorage("subs", []);
   return (
     <div>
-      <nav className="navbar navbar-light bg-warning">
-      <ul className="navbar-nav">
+      <ul className="navbar">
+      <li className="navbar-nav px-2">
           <Link to="/projects">Projects</Link>
-        </ul>
-        <ul className="navbar-nav">
+        </li>
+        <li className="navbar-nav px-2">
           <Link to="/about">About</Link>
-        </ul>
-        <ul className="navbar-nav">
+        </li>
+        <li className="navbar-nav px-2">
           <Link to="/subscriptions">Subscriptions</Link>
-        </ul>
-        <ul className="navbar-nav">
+        </li>
+        <li className="navbar-nav px-2">
           <Link to="/login">Login</Link>
-        </ul>
-        <ul className="navbar-nav">
+        </li>
+        <li className="navbar-nav px-2">
           <Link to="/costs">Costs</Link>
-        </ul>
-      </nav>
+        </li>
+      </ul>
 
       <Switch>
         <Route path="/login">
@@ -85,7 +85,7 @@ function Header() {
           )}
           path="/edit/:id"
         />
-        <Route component={() => <Redirect to="/about" />} />
+        <Route component={() => <Redirect to="/costs" />} />
 
         <Route path="/about">
           <About />

@@ -85,7 +85,7 @@
   padding-top: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
-  padding-left: 50px;
+  padding-left: 0px;
 }
 
 .center {
@@ -132,7 +132,7 @@
 
 /* Style page content */
 .main {
-  margin-left: 50px; /* Same as the width of the sidebar */
+  margin-left: 0px; /* Same as the width of the sidebar */
   padding: 0px 10px;
 }
 
@@ -150,13 +150,16 @@
 
 .navbar {
   color: black;
-  background-color:#ffffff;
+  background-color:#90EE90;
   height: 60px;
   align-items: center;
-  justify-content: center;
-  padding: 20px
-}
 
+  justify-content: center;
+  padding: 10px;
+  border-radius:5px;
+
+  margin: auto
+}
 
 
 

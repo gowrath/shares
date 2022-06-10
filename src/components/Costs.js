@@ -10,12 +10,34 @@ function App() {
   const handleClick = (e) => {
     const pvalue = e.target.value;
 
+    if(e.target.checked) {
     setPriceSum(priceSum + parseFloat(pvalue));
+    }
 
-    const id = e.target.id;
+    else {
+      if (priceSum>0){
+      
+      setPriceSum(priceSum - parseFloat(pvalue));}
 
-    setDisabledButton((prevState) => [...prevState, id]);
+
+      }
+    
+    //const id = e.target.id;
+
+    //setDisabledButton((prevState) => [...prevState, id]);
   };
+
+/*   const handleDoubleClick = (e) => {
+    const pvalue = e.target.value;
+
+    setPriceSum(priceSum - parseFloat(pvalue));
+
+    //const id = e.target.id;
+
+    //setDisabledButton((prevState) => [...prevState, id]);
+  };
+ */
+
 
   const [priceSum, setPriceSum] = useState(0);
 
@@ -38,14 +60,22 @@ function App() {
             <tr key={idx}>
               <td>{nodes.service.fullName}</td>
               <td>
-                <button
+                <label>
+                <input
+                  className="check-space"
+                  type="checkbox"
                   id={id}
                   value={nodes.service.price}
-                  disabled={disabledButton.includes(id)}
+                  //disabled={disabledButton.includes(id)}
                   onClick={handleClick}
-                >
-                  {nodes.service.price}
-                </button>
+                  //onDoubleClick={handleDoubleClick}
+                  
+                />
+               
+                {nodes.service.price}
+
+               
+                </label>
               </td>
               <td>{nodes.service.monthly}</td>
             </tr>

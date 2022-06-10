@@ -18,6 +18,10 @@
 
 }
 
+.check-space{
+  margin-right: 10px;
+}
+
 .item2 {
   grid-area: b;
  

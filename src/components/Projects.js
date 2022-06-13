@@ -49,7 +49,7 @@ const Projects = ({ history, subs, setSubs }) => {
       </div>
 
 
-
+      <p className="center">
 
         <SubForm handleOnSubmit={handleOnSubmit} />
         {!_.isEmpty(subs) ? (
@@ -62,7 +62,7 @@ const Projects = ({ history, subs, setSubs }) => {
           </p>
           )}
 
-
+</p>
 
       
 

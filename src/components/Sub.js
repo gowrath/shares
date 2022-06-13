@@ -6,8 +6,8 @@ const Sub = ({ id, subname, price, date, handleRemoveSub }) => {
   const history = useHistory();
 
   return (
-    <div className="left">
-      <Card style={{ width: "12rem" }} className="sub">
+    <div>
+      <Card style={{ width: "10rem" }} className="sub">
         <Card.Body>
           <Card.Title className="sub-title">{subname}</Card.Title>
           <div className="sub-details">

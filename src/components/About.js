@@ -1,5 +1,6 @@
 import React from "react";
 import Userfront from "@userfront/react";
+import { ChatEngine } from 'react-chat-engine';
 
 
 Userfront.init("jb747qn6");
@@ -8,36 +9,23 @@ const SignupForm = Userfront.build({
   toolId: "rlnkoa",
 });
 
-function About() {
+const About = () => {
   return (
-    <div>
-      <h2 className="center">About</h2>
+
+    <React.Fragment>
+    <ChatEngine 
+      height="100vh"
+      projectID="b7fb8459-6f80-4cc3-a71c-076cac16ae4e"
+      userName="gowrath"
+      userSecret="123123"
 
 
-      <div>
-      
-      <SignupForm />
-      <br />
-      <br />
 
-      </div>
-      <div className="center">
-        <img
-          src={require("./carousel-3.jpg").default}
-          alt="possible subscriptions"
-          width="300"
-          height="150"
-          style={{ alignSelf: "center" }}
-        />
-      </div>
+    />
 
-      <div className="center">
+</React.Fragment>
 
-      </div>
-
-      
-
-    </div>
+    
   );
 }
 

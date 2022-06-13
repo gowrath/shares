@@ -29,15 +29,15 @@ function Header() {
   const [subs, setSubs] = useLocalStorage("subs", []);
   return (
     <div>
-      <ul className="navbar">
+      <ul className="navbar center">
       <li className="navbar-nav px-2">
           <Link to="/projects">Projects</Link>
         </li>
         <li className="navbar-nav px-2">
-          <Link to="/about">About</Link>
+          <Link to="/about">Chat</Link>
         </li>
         <li className="navbar-nav px-2">
-          <Link to="/subscriptions">Subscriptions</Link>
+          <Link to="/subscriptions">Subs</Link>
         </li>
         <li className="navbar-nav px-2">
           <Link to="/login">Login</Link>

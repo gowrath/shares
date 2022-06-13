@@ -1,10 +1,30 @@
 
+.item1 {
+  grid-area: a;
 
+  justify-self: center;
+
+}
 
 .check-space{
   margin-right: 10px;
 }
 
+.item2 {
+  grid-area: b;
+ 
+  justify-self: center;
+  align-items: center
+
+}
+
+.item3 {
+  grid-area: c;
+ 
+  justify-self: center;
+  align-items: center;
+
+}
 
 
 
@@ -32,7 +52,22 @@
 
 
 
+/*Changed deck-style to shade of white --what classes background is*/
 
+
+
+
+/* #logout-button {
+  background-color: purple;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+}
+
+#logout-button[disabled] {
+  background-color: lightgray;
+  color: purple;
+} */
 
 .initial-padding {
   padding-top: 50px;
@@ -68,6 +103,19 @@
   padding: 10px 50px 10px 50px;
 }
 
+.logout-button {
+  background-color: black;
+  color: black;
+  border: black;
+  padding: 5px 10px;
+  vertical-align: text-top;
+}
+
+#logout-button[disabled] {
+  background-color: gray;
+  color: black;
+  vertical-align: text-top;
+} */
 
 
 
@@ -77,7 +125,51 @@
   padding: 0px 10px;
 }
 
+.sidebar {
 
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: flex;
+  position: relative;
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+} 
+
+
+.navbar {
+  color: black;
+  background-color:#90EE90;
+  height: 50px;
+  align-items: center;
+
+  justify-content: center;
+  padding: 10px;
+  border-radius:5px;
+
+  margin: auto
+}
+
+
+
+.klass-card-deck-style {
+  justify-content: center;
+  display: flex;
+  flex-direction: 'row';
+  background-color:#0B0B45;
+
+}
+
+.klass-card-style {
+  text-decoration: none !important;
+  flex: 1;
+  max-width: 30%;
+
+}
+
+/*Changes text of the classes under My Classes
+  a:link also changes the dropdown menu for Seating Charts
+*/
 
 a:link {
   text-decoration: none;
@@ -98,21 +190,31 @@ a:active {
   text-decoration: underline;
 }
 
+/* Controls seating chart width */
 
-.navbar {
-  color: black;
-  background-color:#90EE90;
-  height: 50px;
-  align-items: center;
+.card-sc-width {
+  width: 100px;
+  margin-top: 20px;
+} 
 
-  justify-content: center;
-  padding: 10px;
-  border-radius:5px;
+/*Changed card-body to shade of white*/
 
-  margin: auto
+.card-body {
+  background: paleturquoise;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+
 }
 
+/*changes the text of the seating chart names*/
 
+.card-text{
+  color: skyblue;
+  
+}
+
+/*NavBar Color changed to lighter black*/
 
 
 
@@ -120,6 +222,30 @@ a:active {
   background-color: yellow;
 }
 
+/* p {
+  color:black;
+} */
+
+/* .brand-fontColor{
+  color: white;
+}
+ */
+
+/*Block next to My Classes and the School /Change School Text */
+
+/* .center-vertically {
+  background-color:#141414;
+  color:white;
+} */
+
+/*The 'My Classes' text block*/
+
+.block-header {
+  font-size: 1.5rem;
+  font-family: 'Luxurious Roman', sans-serif;
+  background-color:#0B0B45;
+  color:black;
+}
 
 
 
@@ -147,7 +273,7 @@ a:active {
   font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.2px;
 }
 
 .ce-chat-list {
@@ -185,27 +311,9 @@ a:active {
 }
 
 .ce-send-message-button {
-  text-align: top !important;
-  line-height: 0.5em !important;
-  padding: 0px !important;
+  text-align: center !important;
 }
 
-svg {
-  text-align: top !important;
-  line-height: 1.5em !important;
-  padding: 0px !important;
-}
-
-
-text, svg {
-
-  vertical-align: top !important;
-}
-
-
-.anticon {
-  vertical-align: .45em;
-}
 
 .ce-danger-button {
   background-color: white !important;
@@ -239,7 +347,7 @@ text, svg {
 
 .chat-feed {
   height: 100%;
-  width: 90%;
+  width: 100%;
   overflow: scroll;
   background-color: rgb(240, 240, 240);
 }
@@ -382,8 +490,8 @@ text, svg {
 }
 
 .wrapper {
-  height: 75vh;
-	width: 90%;
+  height: 100vh;
+	width: 100%;
   background: rgb(117,84,160);
   background: linear-gradient(90deg, rgba(117,84,160,1) 7%, rgba(117,84,160,1) 17%, rgba(106,95,168,1) 29%, rgba(99,103,174,1) 44%, rgba(87,116,184,1) 66%, rgba(70,135,198,1) 83%, rgba(44,163,219,1) 96%, rgba(22,188,237,1) 100%, rgba(0,212,255,1) 100%);  
   display: flex;
@@ -405,39 +513,3 @@ text, svg {
   font-size: 2.3em;;
 }
 
-.button {
-  border-radius: 4px;
-  border: none;
-  background-color: white;
-  color: black;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 22px;
-  padding: 20px;
-  width: 200px;
-  transition: all 0.4s;
-  cursor: pointer;
-  margin: 5px;
-  width: 90%;
-}
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.4s;
-}
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-.button:hover span {
-  padding-right: 25px;
-}
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}

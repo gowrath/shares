@@ -3,45 +3,58 @@ import { Button, ButtonGroup, ToggleButtonGroup, ToggleButton } from "react-boot
 //import { Link } from 'react-router-dom';
 //import Profile from "./Profile";
 import { useState } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 function App() {
   const subscriptprices = fakeApiData.data.subprices.nodes;
 
+
+
   const handleClick = (e) => {
     const pvalue = e.target.value;
 
-    if(e.target.checked) {
-    setPriceSum(priceSum + parseFloat(pvalue));
+    const id = e.target.id;
+
+
+
+
+    if (e.target.checked) {
+      setPriceSum(priceSum + parseFloat(pvalue));
+
     }
 
     else {
-      if (priceSum>0){
-      
-      setPriceSum(priceSum - parseFloat(pvalue));}
+      if (priceSum > 0) {
+
+        setPriceSum(priceSum - parseFloat(pvalue));
+      };
 
 
-      }
-    
-    //const id = e.target.id;
 
-    //setDisabledButton((prevState) => [...prevState, id]);
+    }
+
+
+
+
+
+
   };
 
-/*   const handleDoubleClick = (e) => {
-    const pvalue = e.target.value;
-
-    setPriceSum(priceSum - parseFloat(pvalue));
-
-    //const id = e.target.id;
-
-    //setDisabledButton((prevState) => [...prevState, id]);
-  };
- */
+  /*   const handleDoubleClick = (e) => {
+      const pvalue = e.target.value;
+  
+      setPriceSum(priceSum - parseFloat(pvalue));
+  
+      //const id = e.target.id;
+  
+      //setDisabledButton((prevState) => [...prevState, id]);
+    };
+   */
 
 
   const [priceSum, setPriceSum] = useState(0);
 
-  const [disabledButton, setDisabledButton] = useState([]);
+  //const [disabledButton, setDisabledButton] = useState([]);
 
   return (
     <table className="table">
@@ -61,20 +74,21 @@ function App() {
               <td>{nodes.service.fullName}</td>
               <td>
                 <label>
-                <input
-                  className="check-space"
-                  type="checkbox"
-                  id={id}
-                  value={nodes.service.price}
-                  //disabled={disabledButton.includes(id)}
-                  onClick={handleClick}
+                  <input
+                    //checked="false"
+                    className="check-space"
+                    type="checkbox"
+                    id={id}
+                    value={nodes.service.price}
+                    //disabled={disabledButton.includes(id)}
+                    onClick={handleClick}
                   //onDoubleClick={handleDoubleClick}
-                  
-                />
-               
-                {nodes.service.price}
 
-               
+                  />
+
+                  {nodes.service.price}
+
+
                 </label>
               </td>
               <td>{nodes.service.monthly}</td>

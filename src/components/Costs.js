@@ -2,12 +2,20 @@ import fakeApiData from "./data/subs.json";
 import { Button, ButtonGroup, ToggleButtonGroup, ToggleButton } from "react-bootstrap";
 //import { Link } from 'react-router-dom';
 //import Profile from "./Profile";
-import { useState } from "react";
-import useLocalStorage from "../hooks/useLocalStorage";
+import { useState, useEffect } from "react";
+import useLocalStorage from "./useLocalStorage";
 
-function App() {
+
+
+function Costs() {
   const subscriptprices = fakeApiData.data.subprices.nodes;
 
+
+  const [checked, setChecked] = useLocalStorage([],"")
+   
+  
+  
+    
 
 
   const handleClick = (e) => {
@@ -15,11 +23,14 @@ function App() {
 
     const id = e.target.id;
 
+    const cid = e.target.checked
 
 
 
     if (e.target.checked) {
       setPriceSum(priceSum + parseFloat(pvalue));
+
+      
 
     }
 
@@ -27,15 +38,13 @@ function App() {
       if (priceSum > 0) {
 
         setPriceSum(priceSum - parseFloat(pvalue));
+
+        
       };
 
-
+      
 
     }
-
-
-
-
 
 
   };
@@ -44,10 +53,10 @@ function App() {
       const pvalue = e.target.value;
   
       setPriceSum(priceSum - parseFloat(pvalue));
-  
+  setDisabledButton((prevState) => [...prevState, id]);
       //const id = e.target.id;
   
-      //setDisabledButton((prevState) => [...prevState, id]);
+      //
     };
    */
 
@@ -57,6 +66,7 @@ function App() {
   //const [disabledButton, setDisabledButton] = useState([]);
 
   return (
+    <div className="write-center">
     <table className="table">
       <thead>
         <tr>
@@ -75,7 +85,7 @@ function App() {
               <td>
                 <label>
                   <input
-                    //checked="false"
+                    defaultChecked={checked}
                     className="check-space"
                     type="checkbox"
                     id={id}
@@ -91,7 +101,7 @@ function App() {
 
                 </label>
               </td>
-              <td>{nodes.service.monthly}</td>
+              <td className="left">{nodes.service.monthly}</td>
             </tr>
           );
         })}
@@ -107,7 +117,8 @@ function App() {
         </tr>
       </tfoot>
     </table>
+    </div>
   );
 }
 
-export default App;
+export default Costs;

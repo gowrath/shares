@@ -9,20 +9,20 @@ const SignupForm = Userfront.build({
   toolId: "rlnkoa",
 });
 
-const About = () => {
+const Chat = () => {
   return (
 
-    
+    <div className="center">
     <ChatEngine 
       
       projectID="b7fb8459-6f80-4cc3-a71c-076cac16ae4e"
       userName="gowrath"
       userSecret="123123"
-      height='calc(50vh - 20px)'
+      height='calc(75vh - 20px)'
       />
 
 
-
+</div>
    
 
 
@@ -30,4 +30,4 @@ const About = () => {
   );
 }
 
-export default About;
+export default Chat;

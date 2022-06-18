@@ -11,7 +11,7 @@ function Subs() {
     
     <div className="center">    
 
-          <img src={require('./carousel-3.jpg').default} width="300" height="150" style={{ alignSelf: 'center' }}/>
+          <img src={require('./carousel-3.jpg').default} width="300" height="150" alt="sample subscriptions" style={{ alignSelf: 'center' }}/>
 
         </div>
         

@@ -11,13 +11,14 @@ import { Container } from "react-bootstrap";
 import Userfront from "@userfront/react";
 import Login from "./Login";
 import PasswordReset from "./PasswordReset";
-import About from "./About";
+import Chat from "./Chat";
 import AddSub from "./AddSub";
 import Projects from "./Projects";
 import useLocalStorage from "../hooks/useLocalStorage";
 import EditSub from "./EditSub";
 import Costs from "./Costs";
 import Subscriptions from "./Subscriptions"
+import Name from "./Name"
 
 Userfront.init("jb747qn6");
 
@@ -27,6 +28,7 @@ const LogoutButton = Userfront.build({
 
 function Header() {
   const [subs, setSubs] = useLocalStorage("subs", []);
+  const [checked, setChecked] = useLocalStorage("checked",[])
   return (
     <div>
       <ul className="navbar center">
@@ -34,7 +36,7 @@ function Header() {
           <Link to="/projects">Projects</Link>
         </li>
         <li className="navbar-nav px-2">
-          <Link to="/about">Chat</Link>
+          <Link to="/chat">Chat</Link>
         </li>
         <li className="navbar-nav px-2">
           <Link to="/subscriptions">Subs</Link>
@@ -44,6 +46,9 @@ function Header() {
         </li>
         <li className="navbar-nav px-2">
           <Link to="/costs">Costs</Link>
+        </li>
+        <li className="navbar-nav px-2">
+          <Link to="/name">Name</Link>
         </li>
       </ul>
 
@@ -61,10 +66,12 @@ function Header() {
         <Route path="/reset">
           <PasswordReset />
         </Route>
-        <Route path="/about">
-          <About />
+        <Route path="/chat">
+          <Chat />
         </Route>
-
+        <Route path="/name">
+          <Name />
+        </Route>
         <Route
           render={(props) => (
             <Projects {...props} subs={subs} setSubs={setSubs} />
@@ -87,8 +94,8 @@ function Header() {
         />
         <Route component={() => <Redirect to="/costs" />} />
 
-        <Route path="/about">
-          <About />
+        <Route path="/chat">
+          <Chat />
         </Route>
       </Switch>
     </div>

@@ -1,4 +1,28 @@
 
+.item1 {
+  
+
+  justify-self: center;
+
+}
+
+
+.item2 {
+  
+
+  justify-self: center;
+  align-items: center
+
+}
+
+.item3 {
+ 
+
+  justify-self: center;
+  align-items: center;
+
+}
+
 
 
 .check-space{
@@ -42,13 +66,46 @@
 }
 
 .center {
-  padding:25px;
+  padding:10px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  padding-top: 10px
+  
 }
+
+
+
+
+.write-center {
+  
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.navbar {
+  color: black;
+  background-color:#90EE90;
+  height: 50px;
+  align-items: center;
+
+  justify-content: center;
+
+ 
+  border-radius:5px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  
+  
+}
+
+
+
+
 
 .left {
   display: flex;
@@ -59,14 +116,7 @@
   padding: 30px 75px 30px 75px;
 }
 
-.write-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  text-align: center;
-  margin: auto;
-  padding: 10px 50px 10px 50px;
-}
+
 
 
 
@@ -99,18 +149,6 @@ a:active {
 }
 
 
-.navbar {
-  color: black;
-  background-color:#90EE90;
-  height: 50px;
-  align-items: center;
-
-  justify-content: center;
-  padding: 10px;
-  border-radius:5px;
-
-  margin: auto
-}
 
 
 
@@ -200,12 +238,15 @@ svg {
 text, svg {
 
   vertical-align: top !important;
+
 }
 
 
 .anticon {
   vertical-align: .45em;
+  
 }
+
 
 .ce-danger-button {
   background-color: white !important;

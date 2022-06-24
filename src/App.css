@@ -1,36 +1,42 @@
-
-.item1 {
-  
-
-  justify-self: center;
-
+.row {
+  margin-left: 10px;
 }
 
+.row__poster {
+  object-fit: contain;
+  width: 100%;
+  max-height: 175px;
+  margin-right: 10px;
+  transition: transform 450ms;
+}
+
+.row__poster:hover {
+  transform: scale(1.1);
+}
+
+.row__posters {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.item1 {
+  justify-self: center;
+}
 
 .item2 {
-  
-
   justify-self: center;
-  align-items: center
-
+  align-items: center;
 }
 
 .item3 {
- 
-
   justify-self: center;
   align-items: center;
-
 }
 
-
-
-.check-space{
+.check-space {
   margin-right: 10px;
 }
-
-
-
 
 .sub-list {
   display: flex;
@@ -45,18 +51,12 @@
   overflow: hidden;
 }
 .sub-title {
-    font-weight: bold;
-  }
+  font-weight: bold;
+}
 
-  .sub-details {
-    
-    margin-bottom: 0.5rem;
-    }
-  
-
-
-
-
+.sub-details {
+  margin-bottom: 0.5rem;
+}
 
 .initial-padding {
   padding-top: 50px;
@@ -66,46 +66,33 @@
 }
 
 .center {
-  padding:10px;
+  padding: 10px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
 }
 
-
-
-
 .write-center {
-  
   padding: 5px;
   margin: 5px;
   display: flex;
   flex-direction: column;
-  
 }
 
 .navbar {
   color: black;
-  background-color:#90EE90;
+  background-color: #90ee90;
   height: 50px;
   align-items: center;
 
   justify-content: center;
 
- 
-  border-radius:5px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   margin: 20px;
-  
-  
 }
-
-
-
-
 
 .left {
   display: flex;
@@ -116,18 +103,11 @@
   padding: 30px 75px 30px 75px;
 }
 
-
-
-
-
-
 /* Style page content */
 .main {
   margin-left: 0px; /* Same as the width of the sidebar */
   padding: 0px 10px;
 }
-
-
 
 a:link {
   text-decoration: none;
@@ -148,27 +128,15 @@ a:active {
   text-decoration: underline;
 }
 
-
-
-
-
-
-
-.navBar-nav{
+.navBar-nav {
   background-color: yellow;
 }
-
-
-
-
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 
 @keyframes App-logo-spin {
   from {
@@ -178,8 +146,6 @@ a:active {
     transform: rotate(360deg);
   }
 }
-
-
 
 * {
   font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -234,19 +200,14 @@ svg {
   padding: 0px !important;
 }
 
-
-text, svg {
-
+text,
+svg {
   vertical-align: top !important;
-
 }
-
 
 .anticon {
-  vertical-align: .45em;
-  
+  vertical-align: 0.45em;
 }
-
 
 .ce-danger-button {
   background-color: white !important;
@@ -419,20 +380,29 @@ text, svg {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 62,5%;
+  font-size: 62, 5%;
 }
 
 .wrapper {
   height: 75vh;
-	width: 90%;
-  background: rgb(117,84,160);
-  background: linear-gradient(90deg, rgba(117,84,160,1) 7%, rgba(117,84,160,1) 17%, rgba(106,95,168,1) 29%, rgba(99,103,174,1) 44%, rgba(87,116,184,1) 66%, rgba(70,135,198,1) 83%, rgba(44,163,219,1) 96%, rgba(22,188,237,1) 100%, rgba(0,212,255,1) 100%);  
+  width: 90%;
+  background: rgb(117, 84, 160);
+  background: linear-gradient(
+    90deg,
+    rgba(117, 84, 160, 1) 7%,
+    rgba(117, 84, 160, 1) 17%,
+    rgba(106, 95, 168, 1) 29%,
+    rgba(99, 103, 174, 1) 44%,
+    rgba(87, 116, 184, 1) 66%,
+    rgba(70, 135, 198, 1) 83%,
+    rgba(44, 163, 219, 1) 96%,
+    rgba(22, 188, 237, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-
 
 .form {
   width: 400px;
@@ -443,7 +413,7 @@ text, svg {
   color: white;
   margin-bottom: 30px;
   width: 100%;
-  font-size: 2.3em;;
+  font-size: 2.3em;
 }
 
 .button {
@@ -468,7 +438,7 @@ text, svg {
   transition: 0.4s;
 }
 .button span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;

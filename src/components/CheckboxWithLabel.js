@@ -1,14 +1,19 @@
 import fakeApiData from "./data/subs.json";
-import { Button, ButtonGroup, ToggleButtonGroup, ToggleButton } from "react-bootstrap";
+import {
+  Button,
+  ButtonGroup,
+  ToggleButtonGroup,
+  ToggleButton
+} from "react-bootstrap";
 //import { Link } from 'react-router-dom';
 //import Profile from "./Profile";
 import { useState, useEffect } from "react";
 import useLocalStorage from "./useLocalStorage";
 
-function Name() {
+/* function Name() {
   
   const [name, setName] = useLocalStorage("name", "");
-  const [checked, setChecked] = useLocalStorage("checked", false);
+  const [checked, setChecked] = useLocalStorage( false);
 
   return (
     <form>
@@ -34,3 +39,19 @@ function Name() {
 
 
 export default Name;
+ */
+
+export default function CheckboxWithLabel({ labelOn, labelOff }) {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const onChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  return (
+    <label>
+      <input type="checkbox" checked={isChecked} onChange={onChange} />
+      {isChecked ? labelOn : labelOff}
+    </label>
+  );
+}

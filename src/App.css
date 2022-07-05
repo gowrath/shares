@@ -21,7 +21,7 @@
 }
 
 .item1 {
-  justify-self: center;
+  padding-left: 30px;
 }
 
 .item2 {
@@ -75,7 +75,14 @@
 
 .write-center {
   padding: 5px;
-  margin: 5px;
+  margin: 7px;
+  display: flex;
+  flex-direction: column;
+}
+
+.write-center2 {
+  padding: 15px;
+  margin: 15px;
   display: flex;
   flex-direction: column;
 }

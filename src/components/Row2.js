@@ -3,7 +3,7 @@ import axios from "./axios";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-function Row({ title, fetchUrl }) {
+function Row2({ title, fetchUrl }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -19,22 +19,16 @@ function Row({ title, fetchUrl }) {
   console.log(movies);
 
   return (
-    <div className="row">
+    <div className="item1">
       <h2>{title}</h2>
-      <div className="row__posters">
-        {movies.map((movie, idx) => {
-          return (
-            <img
-              key={idx}
-              className="row__poster"
-              src={`${base_url}${movie.poster_path}`}
-              alt={movie.name}
-            />
-          );
-        })}
+
+      <div>
+        {movies.map(movie => (
+          <div>{movie.title}</div>
+        ))}
       </div>
     </div>
   );
 }
 
-export default Row;
+export default Row2;

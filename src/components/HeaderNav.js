@@ -5,7 +5,7 @@ import {
   Switch,
   Route,
   Link,
-  Redirect
+  Redirect,
 } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Userfront from "@userfront/react";
@@ -20,11 +20,12 @@ import Costs from "./Costs";
 import Subscriptions from "./Subscriptions";
 import Name from "./CheckboxWithLabel";
 import CheckboxWithLabel from "./CheckboxWithLabel";
+import ActionMovies from "./ActionMovies";
 
 Userfront.init("jb747qn6");
 
 const LogoutButton = Userfront.build({
-  toolId: "bldord"
+  toolId: "bldord",
 });
 
 function Header() {
@@ -33,24 +34,24 @@ function Header() {
   return (
     <div>
       <ul className="navbar center">
-        <li className="navbar-nav px-2">
+        <li className="navbar-nav">
           <Link to="/projects">Projects</Link>
         </li>
-        <li className="navbar-nav px-2">
+        <li className="navbar-nav">
           <Link to="/chat">Chat</Link>
         </li>
-        <li className="navbar-nav px-2">
+        <li className="navbar-nav">
           <Link to="/subscriptions">Subs</Link>
         </li>
-        <li className="navbar-nav px-2">
+        <li className="navbar-nav">
           <Link to="/login">Login</Link>
         </li>
-        <li className="navbar-nav px-2">
+        <li className="navbar-nav">
           <Link to="/costs">Costs</Link>
         </li>
-        {/*         <li className="navbar-nav px-2">
-          <Link to="/checkboxwithlabel">Checkbox</Link>
-        </li> */}
+        <li className="navbar-nav">
+          <Link to="/actionmovies">Search</Link>
+        </li>
       </ul>
 
       <Switch>
@@ -70,25 +71,32 @@ function Header() {
         <Route path="/chat">
           <Chat />
         </Route>
+        <Route path="/actionmovies">
+          <ActionMovies />
+        </Route>
 
         {/*         <Route path="/checkboxwithlabel">
           <CheckboxWithLabel />
         </Route> */}
 
         <Route
-          render={props => (
+          render={(props) => (
             <Projects {...props} subs={subs} setSubs={setSubs} />
           )}
           path="/projects"
         />
 
         <Route
-          render={props => <AddSub {...props} subs={subs} setSubs={setSubs} />}
+          render={(props) => (
+            <AddSub {...props} subs={subs} setSubs={setSubs} />
+          )}
           path="/addsub"
         />
 
         <Route
-          render={props => <EditSub {...props} subs={subs} setSubs={setSubs} />}
+          render={(props) => (
+            <EditSub {...props} subs={subs} setSubs={setSubs} />
+          )}
           path="/edit/:id"
         />
         <Route component={() => <Redirect to="/subscriptions" />} />

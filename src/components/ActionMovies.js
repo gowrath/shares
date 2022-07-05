@@ -21,6 +21,7 @@ function ActionMovies({ title, fetchUrl }) {
   const subscriptprices = fakeApiData.data.subprices.nodes;
 
   const [searchValue, setSearchValue] = useState("");
+
   const [query, setQuery] = useState("");
 
   const [movies, setMovies] = useState([]);

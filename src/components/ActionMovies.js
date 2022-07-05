@@ -7,6 +7,7 @@ import {
   ToggleButtonGroup,
   ToggleButton,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import fakeApiData from "./data/subs.json";
 
@@ -37,21 +38,23 @@ function ActionMovies({ title, fetchUrl }) {
   //console.log(movies);
 
   const callSearchFunction = (e) => {
-    console.log("Here we go");
+    console.log(e.target.value);
   };
 
   return (
-    <div className="write-center2">
+    <div className="center">
       <form className="example">
         <input
           type="text"
           placeholder="Search..."
           name="search"
           //onChange={handleSearchInputChanges}
-          //onClick={callSearchFunction}
+
           onChange={(event) => setQuery(event.target.value)}
         ></input>
-        <Button>Submit</Button>
+        {/*         <Button onClick={(e) => callSearchFunction(e.target.value)}>
+          Submit
+        </Button> */}
       </form>
       <div className="item1">
         <h1>Action Movies</h1>
@@ -72,10 +75,23 @@ function ActionMovies({ title, fetchUrl }) {
               <p>{nodes.title}</p>
 
               <img
-                className="row__poster"
+                className="glow__poster"
                 src={`${base_url}${nodes.poster_path}`}
                 alt={nodes.title}
               />
+              <p></p>
+              <Link
+                className="gbar2"
+                to={{
+                  pathname: "https://google.com/search?q=" + nodes.title,
+                }}
+                target="_blank"
+              >
+                Google Search
+              </Link>
+              <p>
+                <br></br>
+              </p>
             </div>
           ))}
       </div>

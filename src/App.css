@@ -10,6 +10,14 @@
   transition: transform 450ms;
 }
 
+.glow__poster {
+  object-fit: contain;
+  width: 100%;
+  max-height: 300px;
+  margin-right: 10px;
+  transition: transform 450ms;
+}
+
 .row__poster:hover {
   transform: scale(1.1);
 }
@@ -90,7 +98,7 @@
 .navbar {
   color: black;
   background-color: #90ee90;
-  height: 50px;
+  height: 45px;
   align-items: center;
 
   justify-content: center;
@@ -100,6 +108,31 @@
   flex-direction: column;
   margin: 20px;
 }
+
+.gbar {
+  color: black;
+  background-color: #90ee90;
+  
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 5px;
+  display: flex;
+ 
+}
+
+
+.gbar2 {
+  border-radius: 4px !important;
+  background-color: #90ee90;
+  align-items: center;
+padding: 8px;
+  justify-content: center;
+
+
+}
+
 
 .left {
   display: flex;

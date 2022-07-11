@@ -21,6 +21,7 @@ import Subscriptions from "./Subscriptions";
 import Name from "./CheckboxWithLabel";
 import CheckboxWithLabel from "./CheckboxWithLabel";
 import ActionMovies from "./ActionMovies";
+import Filtering from "./Filtering";
 
 Userfront.init("jb747qn6");
 
@@ -49,8 +50,9 @@ function Header() {
         <li className="navbar-nav">
           <Link to="/costs">Costs</Link>
         </li>
+
         <li className="navbar-nav">
-          <Link to="/actionmovies">Search</Link>
+          <Link to="/filtering">Search</Link>
         </li>
       </ul>
 
@@ -71,8 +73,9 @@ function Header() {
         <Route path="/chat">
           <Chat />
         </Route>
-        <Route path="/actionmovies">
-          <ActionMovies />
+
+        <Route path="/filtering">
+          <Filtering />
         </Route>
 
         {/*         <Route path="/checkboxwithlabel">

@@ -5,22 +5,24 @@ import requests from "./Requests";
 import MovieListHeading from "./MovieListHeading";
 import Search from "./Search";
 
+import { Link } from "react-router-dom";
+
 import axios from "./axios";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-const MOVIE_API_URL =
-  "https://image.tmdb.org/t/p/original/discover/movie?api_key=d626fcf7416057dd64ed3964ae145a5d&with_genres=28";
-
 function Subs({ fetchUrl }) {
-  const [searchValue, setSearchValue] = useState("");
-  const [loading, setLoading] = useState(true);
+  const handleChange = (event) => {
+    setQuery(event.target.value);
+  };
   const [movies, setMovies] = useState([]);
-  const [errorMessage, setErrorMessage] = useState(null);
 
+  const [query, setQuery] = useState("");
+
+  const MOVIE_API_URL = `/search/multi?api_key=d626fcf7416057dd64ed3964ae145a5d&query=`;
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(fetchUrl);
+      const request = await axios.get(MOVIE_API_URL + query);
 
       setMovies(request.data.results);
       return request;
@@ -30,6 +32,60 @@ function Subs({ fetchUrl }) {
 
   return (
     <div className="write-center">
+      <form className="example">
+        <input
+          type="text"
+          placeholder="Search..."
+          name="search"
+          //onChange={handleSearchInputChanges}
+
+          onChange={handleChange}
+        ></input>
+        {/*         <Button onClick={(e) => callSearchFunction(e.target.value)}>
+      Submit
+    </Button> */}
+      </form>
+
+      <div className="item1">
+        <h1>Action Movies</h1>
+      </div>
+      <div>
+        {movies
+          .filter((nodes, idx) => {
+            if (query === "") {
+              return nodes;
+            } else if (
+              nodes.title.toLowerCase().includes(query.toLowerCase())
+            ) {
+              return nodes;
+            }
+          })
+          .map((nodes, index) => (
+            <div key={index}>
+              <p>{nodes.title}</p>
+
+              <img
+                className="glow__poster"
+                src={`${base_url}${nodes.poster_path}`}
+                alt={nodes.title}
+              />
+              <p></p>
+              <Link
+                className="gbar2"
+                to={{
+                  pathname: "https://google.com/search?q=" + nodes.title,
+                }}
+                target="_blank"
+              >
+                Google Search
+              </Link>
+              <p>
+                <br></br>
+              </p>
+            </div>
+          ))}
+      </div>
+
       <Row
         title="Netflix Originals"
         fetchUrl={requests.fetchNetflixOriginals}

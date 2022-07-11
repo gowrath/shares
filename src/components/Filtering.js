@@ -18,8 +18,9 @@ import requests from "./Requests";
 const base_url = "https://image.tmdb.org/t/p/original/";
 
 function ActionMovies({ title, fetchUrl }) {
-  const lookupUrl = `/discover/movie?api_key=d626fcf7416057dd64ed3964ae145a5d&with_genres=28`;
-
+  const lookupUrl = `/movie/top_rated?api_key=d626fcf7416057dd64ed3964ae145a5d&language=en-US`;
+  const lookupUrl2 = `/discover/movie?api_key=d626fcf7416057dd64ed3964ae145a5d&with_genres=99`;
+  const lookupUrl3 = `/discover/movie?api_key=d626fcf7416057dd64ed3964ae145a5d&with_genres=35`;
   const [query, setQuery] = useState("");
 
   const [movies, setMovies] = useState([]);
@@ -28,7 +29,16 @@ function ActionMovies({ title, fetchUrl }) {
     async function fetchData() {
       const request = await axios.get(lookupUrl);
 
-      setMovies(request.data.results);
+      const request2 = await axios.get(lookupUrl2);
+
+      const request3 = await axios.get(lookupUrl3);
+
+      const combined = [
+        ...request.data.results,
+        ...request2.data.results,
+        ...request3.data.results,
+      ];
+      setMovies(combined);
       return request;
     }
     fetchData();
@@ -56,7 +66,7 @@ function ActionMovies({ title, fetchUrl }) {
         </Button> */}
       </form>
       <div className="item1">
-        <h1>Action Movies</h1>
+        <h1>Movies</h1>
       </div>
       <div>
         {movies
@@ -97,12 +107,12 @@ function ActionMovies({ title, fetchUrl }) {
       {/*       <div>
         <Row2 title="Action Movies" fetchUrl={requests.fetchActionMovies} />
       </div> */}
-
+      {/* 
       <div>
         <Row2 title="Top Rated" fetchUrl={requests.fetchTopRated} />
         <Row2 title="Trending Now" fetchUrl={requests.fetchTrending} />
         <Row2 title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -3,7 +3,7 @@ import {
   Button,
   ButtonGroup,
   ToggleButtonGroup,
-  ToggleButton
+  ToggleButton,
 } from "react-bootstrap";
 //import { Link } from 'react-router-dom';
 //import Profile from "./Profile";
@@ -23,7 +23,7 @@ function Costs() {
 
   //const [disabledButton, setDisabledButton] = useState("",[]);
 
-  const handleClick = id => {
+  const handleClick = (id) => {
     const pvalue = id.target.value;
 
     //const id = e.target.id;
@@ -34,9 +34,9 @@ function Costs() {
 
     //setChecked(id.target.checked==true)
 
-    if (id.target.checked == true) {
+    if (id.target.checked === true) {
       setPriceSum(priceSum + parseFloat(id.target.value));
-    } else if (id.target.checked == false) {
+    } else if (id.target.checked === false) {
       if (priceSum > 0) {
         setPriceSum(priceSum - parseFloat(id.target.value));
       }

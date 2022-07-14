@@ -3,17 +3,8 @@ import axios from "./axios";
 
 import Row from "./Row";
 import Row2 from "./Row2";
-import {
-  Button,
-  ButtonGroup,
-  ToggleButtonGroup,
-  ToggleButton,
-} from "react-bootstrap";
+import { Button, ButtonGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
-import fakeApiData from "./data/subs.json";
-
-import requests from "./Requests";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
@@ -22,7 +13,7 @@ function ActionMovies({ title, fetchUrl }) {
   const lookupUrl2 = `/discover/movie?api_key=d626fcf7416057dd64ed3964ae145a5d&with_genres=99`;
   const lookupUrl3 = `/discover/movie?api_key=d626fcf7416057dd64ed3964ae145a5d&with_genres=35`;
   const [query, setQuery] = useState("");
-
+  const [flip, setFlip] = useState(false);
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -48,6 +39,10 @@ function ActionMovies({ title, fetchUrl }) {
 
   const callSearchFunction = (e) => {
     console.log(e.target.value);
+  };
+
+  const handleClick = (id) => {
+    setFlip(!flip);
   };
 
   return (
@@ -79,27 +74,34 @@ function ActionMovies({ title, fetchUrl }) {
               return nodes;
             }
           })
-          .map((nodes, index) => (
-            <div key={index}>
+          .map((nodes, idx) => (
+            <div key={idx}>
               <p>{nodes.title}</p>
 
-              <img
-                className="glow__poster"
-                src={`${base_url}${nodes.poster_path}`}
-                alt={nodes.title}
-              />
-              <p></p>
-              <Link
-                className="gbar2"
-                to={{
-                  pathname: "https://google.com/search?q=" + nodes.title,
-                }}
-                target="_blank"
-              >
-                Google Search
-              </Link>
+              <div className={`card ${flip ? "flip" : ""}`}>
+                <img
+                  className="front"
+                  onClick={setFlip}
+                  src={`${base_url}${nodes.poster_path}`}
+                  alt={nodes.title}
+                />
+
+                <div className="back" onClick={setFlip}>
+                  <p>{nodes.overview}</p>
+                </div>
+              </div>
+
               <p>
                 <br></br>
+                <Link
+                  className="gbar2"
+                  to={{
+                    pathname: "https://google.com/search?q=" + nodes.title,
+                  }}
+                  target="_blank"
+                >
+                  Google Search
+                </Link>
               </p>
             </div>
           ))}

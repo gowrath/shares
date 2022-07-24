@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "./axios";
 
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ const base_url = "https://image.tmdb.org/t/p/original/";
 
 //state property says id of thing and then says flip
 
-function ActionMovies({ title, fetchUrl, video, flashcard }) {
+function FilteringSub({ title, fetchUrl, video, id }) {
   const lookupUrl = `/movie/top_rated?api_key=d626fcf7416057dd64ed3964ae145a5d&language=en-US`;
   const lookupUrl2 = `/discover/movie?api_key=d626fcf7416057dd64ed3964ae145a5d&with_genres=99`;
   const lookupUrl3 = `/discover/movie?api_key=d626fcf7416057dd64ed3964ae145a5d&with_genres=35`;
@@ -34,35 +34,8 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
     fetchData();
   }, [fetchUrl]);
 
-  //console.log(movies);
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    setFlip(!flip);
-  };
-
-  const frontEl = useRef();
-
-  const backEl = useRef();
-
   return (
     <div className="center">
-      <form className="example">
-        <input
-          type="text"
-          placeholder="Search..."
-          name="search"
-          //onChange={handleSearchInputChanges}
-
-          onChange={(event) => setQuery(event.target.value)}
-        ></input>
-        {/*         <Button onClick={(e) => callSearchFunction(e.target.value)}>
-          Submit
-        </Button> */}
-      </form>
-      <div className="item1">
-        <h1>Movies</h1>
-      </div>
       <div>
         {movies
           .filter((nodes, idx) => {
@@ -74,8 +47,9 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
               return nodes;
             }
           })
+
           .map((nodes, idx) => (
-            <div key={idx} ref={frontEl} onClick={handleClick} id={`b${idx}`}>
+            <div key={idx} id={`b${idx}`} onClick={(e) => handleClick(id)}>
               <p>{nodes.title}</p>
 
               <div className={`card ${flip ? "flip" : ""}`}>
@@ -85,7 +59,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
                   alt={nodes.title}
                 />
 
-                <div className="back" ref={backEl} onClick={handleClick}>
+                <div className="back">
                   <p>{nodes.overview}</p>
                 </div>
               </div>
@@ -105,6 +79,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
             </div>
           ))}
       </div>
+
       {/*       <div>
         <Row2 title="Action Movies" fetchUrl={requests.fetchActionMovies} />
       </div> */}
@@ -118,4 +93,4 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
   );
 }
 
-export default ActionMovies;
+export default FilteringSub;

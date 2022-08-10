@@ -15,6 +15,9 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
   const [flip, setFlip] = useState("", []);
   const [movies, setMovies] = useState([]);
 
+  const frontEl = useRef();
+  const backEl = useRef();
+
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(lookupUrl);
@@ -37,17 +40,14 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
   //console.log(movies);
 
   const handleClick = (e) => {
-    e.preventDefault();
     setFlip(!flip);
+
+    // setFlip(pvalue) == true ? setFlip(pvalue) : setFlip(pvalue);
   };
 
-  const frontEl = useRef();
-
-  const backEl = useRef();
-
   return (
-    <div className="center">
-      <form className="example">
+    <div>
+      <form className="searchbar">
         <input
           type="text"
           placeholder="Search..."
@@ -63,30 +63,40 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
       <div className="item1">
         <h1>Movies</h1>
       </div>
-      <div>
+      <div className="card-grid">
         {movies
-          .filter((nodes, idx) => {
+          .filter((movie, idx) => {
             if (query === "") {
-              return nodes;
+              return movie;
             } else if (
-              nodes.title.toLowerCase().includes(query.toLowerCase())
+              movie.title.toLowerCase().includes(query.toLowerCase())
             ) {
-              return nodes;
+              return movie;
             }
           })
-          .map((nodes, idx) => (
-            <div key={idx} ref={frontEl} onClick={handleClick} id={`b${idx}`}>
-              <p>{nodes.title}</p>
+          .map((film, idx) => (
+            <div key={film} ref={frontEl} id={film}>
+              <p>{film.title}</p>
 
-              <div className={`card ${flip ? "flip" : ""}`}>
+              <div
+                id={film}
+                className={`card ${flip ? "flip" : ""}`}
+                value={film}
+                onClick={(e) => handleClick(e.target.id)}
+                ref={frontEl}
+              >
                 <img
                   className="front"
-                  src={`${base_url}${nodes.poster_path}`}
-                  alt={nodes.title}
+                  src={`${base_url}${film.poster_path}`}
+                  alt={film.title}
                 />
 
-                <div className="back" ref={backEl} onClick={handleClick}>
-                  <p>{nodes.overview}</p>
+                <div
+                  className="back"
+                  ref={backEl}
+                  onClick={(id) => handleClick(id)}
+                >
+                  <p>{film.overview.substring(0, 200)}...</p>
                 </div>
               </div>
 
@@ -95,7 +105,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
                 <Link
                   className="gbar2"
                   to={{
-                    pathname: "https://google.com/search?q=" + nodes.title,
+                    pathname: "https://google.com/search?q=" + film.title,
                   }}
                   target="_blank"
                 >

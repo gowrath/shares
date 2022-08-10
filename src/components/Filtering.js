@@ -45,6 +45,8 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
     // setFlip(pvalue) == true ? setFlip(pvalue) : setFlip(pvalue);
   };
 
+  let pattern = /^(?<![^\r\n]\r?\n)[A-Z][^.]*\.\s*/;
+
   return (
     <div>
       <form className="searchbar">
@@ -76,7 +78,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
           })
           .map((film, idx) => (
             <div key={film} ref={frontEl} id={film}>
-              <p>{film.title}</p>
+              <p className="movietitle">{film.title}</p>
 
               <div
                 id={film}
@@ -96,7 +98,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
                   ref={backEl}
                   onClick={(id) => handleClick(id)}
                 >
-                  <p>{film.overview.substring(0, 200)}...</p>
+                  <p>{film.overview.match(pattern)}</p>
                 </div>
               </div>
 

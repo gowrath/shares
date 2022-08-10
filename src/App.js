@@ -8,7 +8,7 @@ export default function App() {
     <Router>
       <div
         style={{
-          backgroundColor: "FFFFFF",
+          backgroundColor: "00643A",
           height: "1200px",
         }}
       >

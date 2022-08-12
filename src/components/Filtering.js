@@ -15,6 +15,9 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
   const [flip, setFlip] = useState("", []);
   const [movies, setMovies] = useState([]);
 
+  const frontEl = useRef();
+  const backEl = useRef();
+
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(lookupUrl);
@@ -37,87 +40,85 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
   //console.log(movies);
 
   const handleClick = (e) => {
-    e.preventDefault();
     setFlip(!flip);
-  };
 
-  //let pattern = /^(?<![^\r\n]\r?\n)[A-Z][^.]*\.\s*/;
+    //let pattern = /^(?<![^\r\n]\r?\n)[A-Z][^.]*\.\s*/;
 
-  const frontEl = useRef();
+    const frontEl = useRef();
 
-  const backEl = useRef();
+    let pattern = /^(?<![^\r\n]\r?\n)[A-Z][^.]*\.\s*/;
 
-  return (
-    <div>
-      <form className="searchbar">
-        <input
-          type="text"
-          placeholder="Search..."
-          name="search"
-          //onChange={handleSearchInputChanges}
+    return (
+      <div>
+        <form className="searchbar">
+          <input
+            type="text"
+            placeholder="Search..."
+            name="search"
+            //onChange={handleSearchInputChanges}
 
-          onChange={(event) => setQuery(event.target.value)}
-        ></input>
-        {/*         <Button onClick={(e) => callSearchFunction(e.target.value)}>
+            onChange={(event) => setQuery(event.target.value)}
+          ></input>
+          {/*         <Button onClick={(e) => callSearchFunction(e.target.value)}>
           Submit
         </Button> */}
-      </form>
-      <div className="item1">
-        <h1>Movies</h1>
-      </div>
-      <div className="card-grid">
-        {movies
-          .filter((nodes, idx) => {
-            if (query === "") {
-              return nodes;
-            } else if (
-              nodes.title.toLowerCase().includes(query.toLowerCase())
-            ) {
-              return nodes;
-            }
-          })
-          .map((nodes, idx) => (
-            <div key={idx} ref={frontEl} onClick={handleClick} id={`b${idx}`}>
-              <p className="movietitle">{nodes.title}</p>
+        </form>
+        <div className="item1">
+          <h1>Movies</h1>
+        </div>
+        <div className="card-grid">
+          {movies
+            .filter((movie, idx) => {
+              if (query === "") {
+                return movie;
+              } else if (
+                movie.title.toLowerCase().includes(query.toLowerCase())
+              ) {
+                return movie;
+              }
+            })
+            .map((nodes, idx) => (
+              <div key={idx} ref={frontEl} onClick={handleClick} id={`b${idx}`}>
+                <p className="movietitle">{nodes.title}</p>
 
-              <div className={`card ${flip ? "flip" : ""}`}>
-                <img
-                  className="front"
-                  src={`${base_url}${nodes.poster_path}`}
-                  alt={nodes.title}
-                />
+                <div className={`card ${flip ? "flip" : ""}`}>
+                  <img
+                    className="front"
+                    src={`${base_url}${film.poster_path}`}
+                    alt={film.title}
+                  />
 
-                <div className="back" ref={backEl} onClick={handleClick}>
-                  <p>{nodes.overview.substring(0, 100)}</p>
+                  <div className="back" ref={backEl} onClick={handleClick}>
+                    <p>{nodes.overview.substring(0, 100)}</p>
+                  </div>
                 </div>
-              </div>
 
-              <p>
-                <br></br>
-                <Link
-                  className="gbar2"
-                  to={{
-                    pathname: "https://google.com/search?q=" + nodes.title,
-                  }}
-                  target="_blank"
-                >
-                  Google Search
-                </Link>
-              </p>
-            </div>
-          ))}
-      </div>
-      {/*       <div>
+                <p>
+                  <br></br>
+                  <Link
+                    className="gbar2"
+                    to={{
+                      pathname: "https://google.com/search?q=" + film.title,
+                    }}
+                    target="_blank"
+                  >
+                    Google Search
+                  </Link>
+                </p>
+              </div>
+            ))}
+        </div>
+        {/*       <div>
         <Row2 title="Action Movies" fetchUrl={requests.fetchActionMovies} />
       </div> */}
-      {/* 
+        {/* 
       <div>
         <Row2 title="Top Rated" fetchUrl={requests.fetchTopRated} />
         <Row2 title="Trending Now" fetchUrl={requests.fetchTrending} />
         <Row2 title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
       </div> */}
-    </div>
-  );
+      </div>
+    );
+  };
 }
-
 export default ActionMovies;

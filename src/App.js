@@ -8,10 +8,6 @@ export default function App() {
     <Router>
       <div
         style={{
-<<<<<<< HEAD
-=======
-          backgroundColor: "00643A",
->>>>>>> 05a3ca737978b03585fad626fcfa5e216d252b18
           height: "1200px",
         }}
       >

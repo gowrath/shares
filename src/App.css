@@ -1,11 +1,7 @@
 .movietitle {
   font-size: .8em;
   font-weight: bold;
-<<<<<<< HEAD
   max-width: 100%;
-=======
-  max-width: 50%;
->>>>>>> 05a3ca737978b03585fad626fcfa5e216d252b18
     flex-wrap: wrap;
 
 
@@ -35,23 +31,15 @@
 }
 
 .gbar2 {
-<<<<<<< HEAD
   border-radius: 4px !important;
   background-color: #7FFFD4;
   
 padding: 5px;
   
-=======
-
-
-font-size: .8em;
-font-weight: bold;
->>>>>>> 05a3ca737978b03585fad626fcfa5e216d252b18
 
 
 }
 
-<<<<<<< HEAD
 .searchbar {
   color: black;
 
@@ -65,28 +53,15 @@ font-weight: bold;
   flex-direction: column;
   margin: 20px;
 }
-=======
-
-
->>>>>>> 05a3ca737978b03585fad626fcfa5e216d252b18
 
 .card-grid {
   display: grid;
   align-items: center;
-<<<<<<< HEAD
 
   gap: .1rem;
   margin: 5px 5px 5px 5px;
   padding: 15px;
 max-width: 100%;
-=======
-  grid-template-columns: repeat(2, minmax(225px, 1fr));
-  gap: .1rem;
-  margin: 7px 7px 7px 10px;
-  padding: 5px;
-
-}
->>>>>>> 05a3ca737978b03585fad626fcfa5e216d252b18
 
 
 } 
@@ -100,11 +75,7 @@ display: grid;
    justify-content: center;
    align-items: center;
    height: 225px;
-<<<<<<< HEAD
      object-fit: contain;
-=======
-     width: 148px;
->>>>>>> 05a3ca737978b03585fad626fcfa5e216d252b18
   
   
   background-color: transparent;
@@ -278,7 +249,6 @@ color: red;
   align-items: center;
 
   justify-content: center;
-<<<<<<< HEAD
  
   display: flex;
   flex-direction: column;
@@ -288,16 +258,6 @@ color: red;
  
 
 
-=======
-  opacity: 80%;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-  font-size: .8em;
-  font-weight: bold;
-  background: linear-gradient(45deg, teal, skyblue);
->>>>>>> 05a3ca737978b03585fad626fcfa5e216d252b18
 }
 
 .searchbar {

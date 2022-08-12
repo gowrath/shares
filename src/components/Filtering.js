@@ -41,13 +41,15 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
     setFlip(!flip);
   };
 
+  //let pattern = /^(?<![^\r\n]\r?\n)[A-Z][^.]*\.\s*/;
+
   const frontEl = useRef();
 
   const backEl = useRef();
 
   return (
-    <div className="center">
-      <form className="example">
+    <div>
+      <form className="searchbar">
         <input
           type="text"
           placeholder="Search..."
@@ -63,7 +65,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
       <div className="item1">
         <h1>Movies</h1>
       </div>
-      <div>
+      <div className="card-grid">
         {movies
           .filter((nodes, idx) => {
             if (query === "") {
@@ -76,7 +78,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
           })
           .map((nodes, idx) => (
             <div key={idx} ref={frontEl} onClick={handleClick} id={`b${idx}`}>
-              <p>{nodes.title}</p>
+              <p className="movietitle">{nodes.title}</p>
 
               <div className={`card ${flip ? "flip" : ""}`}>
                 <img
@@ -86,7 +88,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
                 />
 
                 <div className="back" ref={backEl} onClick={handleClick}>
-                  <p>{nodes.overview}</p>
+                  <p>{nodes.overview.substring(0, 100)}</p>
                 </div>
               </div>
 

@@ -1,3 +1,12 @@
+.movietitle {
+  font-size: .8em;
+  font-weight: bold;
+  max-width: 100%;
+    flex-wrap: wrap;
+
+
+}
+
 .glow__poster {
   
   display: flex;
@@ -12,7 +21,7 @@
 
 .gbar {
   color: black;
-  background-color: #90ee90;
+  background-color: #7FFFD4;
   
   
 
@@ -23,7 +32,7 @@
 
 .gbar2 {
   border-radius: 4px !important;
-  background-color: #90ee90;
+  background-color: #7FFFD4;
   
 padding: 5px;
   
@@ -31,26 +40,42 @@ padding: 5px;
 
 }
 
-/* .card-grid {
+.searchbar {
+  color: black;
+
+  height: 45px;
+  align-items: center;
+
+  justify-content: center;
+
+
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.card-grid {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
-  margin: 20px 20px 20px 45px;
-  padding: 30px;
 
-} */
+  gap: .1rem;
+  margin: 5px 5px 5px 5px;
+  padding: 15px;
+max-width: 100%;
+
+
+} 
 
 
 .card {
-
- 
+display: grid;
+  max-width: 75%;
   display: flex;
   flex-direction: column;
    justify-content: center;
    align-items: center;
-   height: 250px;
-     max-width: 100%;
+   height: 225px;
+     object-fit: contain;
   
   
   background-color: transparent;
@@ -82,7 +107,7 @@ opacity: 1;
 .card .front {
   
 
-   height: 250px;
+   height: 225px;
      max-width: 100%;
      backface-visibility: hidden;
 
@@ -106,7 +131,7 @@ opacity: 1;
   transform: rotateY(180deg);
   max-width: 100%;
 
-  font-size:.7em;
+  font-size:.8em;
 
   background-color: white;
 }
@@ -142,7 +167,7 @@ color: red;
 }
 
 .item1 {
-  padding-left: 30px;
+  padding-left: 30px
 }
 
 .item2 {
@@ -183,18 +208,25 @@ color: red;
   padding-top: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
-  padding-left: 0px;
+  padding-left: 50px;
 }
 
 .center {
-  margin: 20px;
-  padding: 20px;
+  margin: 10px;
+  padding: 10px;
+
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  align-items: center;
+
+  border-radius: 5px;
+
+
 }
+
+
 
 .write-center {
   padding: 5px;
@@ -212,16 +244,20 @@ color: red;
 
 .navbar {
   color: black;
-  background-color: #90ee90;
-  height: 45px;
+  background-color: #7FFFD4;
+  height: 70px;
   align-items: center;
 
   justify-content: center;
-
-  border-radius: 5px;
+ 
   display: flex;
   flex-direction: column;
-  margin: 20px;
+ 
+  font-size: .9em;
+
+ 
+
+
 }
 
 
@@ -265,7 +301,9 @@ a:active {
 }
 
 .navBar-nav {
-  background-color: yellow;
+
+  margin:0px;
+  padding:0px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -1,5 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "./axios";
+import Row2 from "./Row2";
+import requests from "./Requests";
+
+import {
+  Button,
+  ButtonGroup,
+  ToggleButtonGroup,
+  ToggleButton,
+} from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
@@ -14,9 +23,12 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
   const [query, setQuery] = useState("");
   const [flip, setFlip] = useState("", []);
   const [movies, setMovies] = useState([]);
+  const [description, setDescription] = useState("");
 
   const frontEl = useRef();
   const backEl = useRef();
+
+  const count = useRef(0);
 
   useEffect(() => {
     async function fetchData() {
@@ -39,57 +51,93 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
 
   //console.log(movies);
 
-  const handleClick = (e) => {
-    setFlip(!flip);
+  function handleClick(e) {
+    //let potion = id.target.value;
 
-    //let pattern = /^(?<![^\r\n]\r?\n)[A-Z][^.]*\.\s*/;
+    //console.log(e.target.value);
+    console.log("hello");
+    //console.log(id[movies.overview]);
 
-    const frontEl = useRef();
+    //console.log(movies);
 
-    let pattern = /^(?<![^\r\n]\r?\n)[A-Z][^.]*\.\s*/;
+    //console.log();
 
-    return (
-      <div>
-        <form className="searchbar">
-          <input
-            type="text"
-            placeholder="Search..."
-            name="search"
-            //onChange={handleSearchInputChanges}
+    //console.log(backEl.current.firstChild.innerHTML);
 
-            onChange={(event) => setQuery(event.target.value)}
-          ></input>
-          {/*         <Button onClick={(e) => callSearchFunction(e.target.value)}>
+    //console.log(frontEl.current.innerHTML);
+    console.log(e.currentTarget.id);
+
+    let num = e.currentTarget.id;
+
+    let menu = document.getElementById(num);
+
+    let menu2 = menu.getElementsByTagName("p")[0];
+
+    console.log(menu2.innerHTML);
+
+    setDescription(menu2.innerHTML);
+  }
+  //let pattern = /^(?<![^\r\n]\r?\n)[A-Z][^.]*\.\s*/;
+
+  //const frontEl = useRef();
+
+  //let pattern = /^(?<![^\r\n]\r?\n)[A-Z][^.]*\.\s*/;
+
+  return (
+    <div>
+      <form className="searchbar">
+        <input
+          type="text"
+          placeholder="Search..."
+          name="search"
+          //onChange={handleSearchInputChanges}
+
+          onChange={(event) => setQuery(event.target.value)}
+        ></input>
+        {/*         <Button onClick={(e) => callSearchFunction(e.target.value)}>
           Submit
         </Button> */}
-        </form>
-        <div className="item1">
-          <h1>Movies</h1>
-        </div>
-        <div className="card-grid">
-          {movies
-            .filter((movie, idx) => {
-              if (query === "") {
-                return movie;
-              } else if (
-                movie.title.toLowerCase().includes(query.toLowerCase())
-              ) {
-                return movie;
-              }
-            })
-            .map((nodes, idx) => (
-              <div key={idx} ref={frontEl} onClick={handleClick} id={`b${idx}`}>
+      </form>
+      <div className="item1">
+        <h1>Movies</h1>
+      </div>
+      <div className="card-grid">{description}</div>
+      <div className="card-grid">
+        {movies
+          .filter((movie, idx) => {
+            if (query === "") {
+              return movie;
+            } else if (
+              movie.title.toLowerCase().includes(query.toLowerCase())
+            ) {
+              return movie;
+            }
+          })
+
+          .map((nodes, idx) => {
+            const id = `b${idx}`;
+
+            return (
+              <div key={idx} value={nodes.overview}>
                 <p className="movietitle">{nodes.title}</p>
 
-                <div className={`card ${flip ? "flip" : ""}`}>
+                <div
+                  ref={frontEl}
+                  className="card"
+                  id={id}
+                  value={nodes.overview}
+                  onClick={(e) => {
+                    handleClick(e);
+                  }}
+                >
                   <img
                     className="front"
-                    src={`${base_url}${film.poster_path}`}
-                    alt={film.title}
+                    src={`${base_url}${nodes.poster_path}`}
+                    alt={nodes.title}
                   />
 
-                  <div className="back" ref={backEl} onClick={handleClick}>
-                    <p>{nodes.overview.substring(0, 100)}</p>
+                  <div className="back" ref={backEl}>
+                    <p>{nodes.overview}</p>
                   </div>
                 </div>
 
@@ -98,7 +146,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
                   <Link
                     className="gbar2"
                     to={{
-                      pathname: "https://google.com/search?q=" + film.title,
+                      pathname: "https://google.com/search?q=" + nodes.title,
                     }}
                     target="_blank"
                   >
@@ -106,19 +154,18 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
                   </Link>
                 </p>
               </div>
-            ))}
-        </div>
-        {/*       <div>
-        <Row2 title="Action Movies" fetchUrl={requests.fetchActionMovies} />
-      </div> */}
-        {/* 
+            );
+          })}
+      </div>
+      {/* 
       <div>
         <Row2 title="Top Rated" fetchUrl={requests.fetchTopRated} />
         <Row2 title="Trending Now" fetchUrl={requests.fetchTrending} />
         <Row2 title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
       </div> */}
-      </div>
-    );
-  };
+      )
+    </div>
+  );
 }
+
 export default ActionMovies;

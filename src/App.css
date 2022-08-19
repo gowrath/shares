@@ -90,7 +90,8 @@ display: grid;
   cursor: pointer;
   transform: perspective(1000px) rotateY(var(--rotate-y,0)) translateY(var(--translate-y,0));
 
-  
+  font-size:.8em;
+ 
 }
 
 
@@ -110,8 +111,7 @@ opacity: 1;
    height: 225px;
      max-width: 100%;
      backface-visibility: hidden;
-
- 
+   
      
 }
 

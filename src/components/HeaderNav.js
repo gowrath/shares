@@ -22,6 +22,7 @@ import Name from "./CheckboxWithLabel";
 import CheckboxWithLabel from "./CheckboxWithLabel";
 import ActionMovies from "./ActionMovies";
 import Filtering from "./Filtering";
+import Filtering2 from "./Filtering2";
 
 Userfront.init("jb747qn6");
 

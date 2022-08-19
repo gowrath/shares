@@ -11,6 +11,7 @@ import {
 } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
+import { SettingOutlined } from "@ant-design/icons";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
@@ -24,6 +25,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
   const [flip, setFlip] = useState("", []);
   const [movies, setMovies] = useState([]);
   const [description, setDescription] = useState("");
+  const [film, setFilm] = useState("");
 
   const frontEl = useRef();
   const backEl = useRef();
@@ -73,8 +75,10 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
 
     let menu2 = menu.getElementsByTagName("p")[0];
 
-    console.log(menu2.innerHTML);
+    let tag = menu.getElementsByTagName("img")[0].alt;
 
+    console.log(menu2.innerHTML);
+    setFilm(tag);
     setDescription(menu2.innerHTML);
   }
   //let pattern = /^(?<![^\r\n]\r?\n)[A-Z][^.]*\.\s*/;
@@ -98,11 +102,12 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
           Submit
         </Button> */}
       </form>
-      <div className="item1">
+      <div className="center2">
         <h1>Movies</h1>
       </div>
-      <div className="card-grid">{description}</div>
-      <div className="card-grid">
+      <div className="center3">{film}</div>
+      <div className="descbar">{description}</div>
+      <div className="row__posters2">
         {movies
           .filter((movie, idx) => {
             if (query === "") {
@@ -118,7 +123,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
             const id = `b${idx}`;
 
             return (
-              <div key={idx} value={nodes.overview}>
+              <div key={idx}>
                 <p className="movietitle">{nodes.title}</p>
 
                 <div
@@ -131,7 +136,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
                   }}
                 >
                   <img
-                    className="front"
+                    className="card"
                     src={`${base_url}${nodes.poster_path}`}
                     alt={nodes.title}
                   />
@@ -163,7 +168,6 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
         <Row2 title="Trending Now" fetchUrl={requests.fetchTrending} />
         <Row2 title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
       </div> */}
-      )
     </div>
   );
 }

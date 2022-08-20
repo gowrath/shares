@@ -34,7 +34,7 @@ color: white;
   border-radius: 4px !important;
   background-color: #7FFFD4;
   
-padding: 5px;
+padding: 2px;
   
 font-size: .7em;
 
@@ -60,12 +60,12 @@ display: flex;
 
 .descbar {
 
-  height: 200px;
+  height: 175px;
   display: grid;
   align-items: left;
 justify-content: top;
   gap: .1rem;
-  margin: 10px;
+  margin: 5px;
   padding: 0px 5px 0px 5px;
 max-width: 100%;
 font-size: .8em;
@@ -145,8 +145,8 @@ opacity: 1;
 
 
 
- margin:20px;
-padding: 10px;
+ margin:10px;
+padding: 5px;
 position: relative;
 
  
@@ -162,7 +162,7 @@ color: black;
 
 display: grid;
 grid-auto-flow:column;
-grid-template-rows: 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr;
 overflow-x: auto ;
 
 }

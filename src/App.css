@@ -44,6 +44,21 @@ align-items: center;
 display: flex;
 }
 
+
+.gbar3 {
+ border-radius: 4px !important;
+ background-color: white;
+ 
+padding: 2px;
+ 
+font-size: .7em;
+
+justify-content: bottom;
+align-items: bottom;
+
+display: flex;
+}
+
 .searchbar {
   color: black;
 
@@ -255,8 +270,11 @@ overflow-x: auto ;
 
 .sub {
   margin: 5px;
-  width: 80px;
+  width: 400px;
+  height: 100%;
   overflow: hidden;
+  align-items: left;
+  justify-content: left;
 }
 .sub-title {
   font-weight: bold;

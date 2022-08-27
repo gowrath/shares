@@ -8,15 +8,16 @@ const SubForm = (props) => {
       subname: props.sub ? props.sub.subname : "",
       price: props.sub ? props.sub.price : "",
       date: props.sub ? props.sub.date : "",
+      content: props.sub ? props.sub.content : "",
     };
   });
 
   const [errorMsg, setErrorMsg] = useState("");
-  const { subname, price } = sub;
+  const { subname, price, content } = sub;
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    const values = [subname, price];
+    const values = [subname, price, content];
     let errorMsg = "";
 
     const allFieldsFilled = values.every((field) => {
@@ -29,6 +30,7 @@ const SubForm = (props) => {
         id: uuidv4(),
         subname,
         price,
+        content,
         date: new Date(),
       };
       props.handleOnSubmit(sub);
@@ -70,7 +72,7 @@ const SubForm = (props) => {
       {errorMsg && <p className="errorMsg">{errorMsg}</p>}
       <Form onSubmit={handleOnSubmit}>
         <Form.Group controlId="name">
-          <Form.Label>Sub Name</Form.Label>
+          <Form.Label>Post Name</Form.Label>
           <Form.Control
             className="input-control"
             type="text"
@@ -82,7 +84,7 @@ const SubForm = (props) => {
         </Form.Group>
 
         <Form.Group controlId="price">
-          <Form.Label>Sub Price</Form.Label>
+          <Form.Label>Post Price</Form.Label>
           <Form.Control
             className="input-control"
             type="text"
@@ -92,6 +94,20 @@ const SubForm = (props) => {
             onChange={handleInputChange}
           />
         </Form.Group>
+
+        <Form.Group controlId="content">
+          <Form.Label>Post Content</Form.Label>
+          <Form.Control
+            className="input-control"
+            style={{ height: "200px" }}
+            type="text"
+            name="content"
+            value={content}
+            placeholder="Enter text"
+            onChange={handleInputChange}
+          />
+        </Form.Group>
+
         <Button variant="primary" type="submit" className="submit-btn">
           Submit
         </Button>

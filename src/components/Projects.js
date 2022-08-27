@@ -64,7 +64,7 @@ const Projects = ({ history, subs, setSubs, fetchUrl }) => {
         </div>
 
         <div className="write-center">
-          <p>Here is a subscription application.</p>
+          <p>Here is a content application.</p>
         </div>
 
         <div className="center">
@@ -78,7 +78,7 @@ const Projects = ({ history, subs, setSubs, fetchUrl }) => {
         </div>
       </div>
 
-      <p className="center">
+      <p className="write-center">
         <SubForm handleOnSubmit={handleOnSubmit} />
         {!_.isEmpty(subs) ? (
           subs.map((sub) => (
@@ -105,70 +105,7 @@ const Projects = ({ history, subs, setSubs, fetchUrl }) => {
           Submit
         </Button> */}
         </form>
-        <div className="item1">
-          <h1>Movies</h1>
-        </div>
-        <div className="card-grid">
-          {movies
-            .filter((movie, idx) => {
-              if (query === "") {
-                return movie;
-              } else if (
-                movie.title.toLowerCase().includes(query.toLowerCase())
-              ) {
-                return movie;
-              }
-            })
-            .map((film, idx) => (
-              <div key={film} ref={frontEl} id={film}>
-                <p>{film.title}</p>
-
-                <div
-                  id={film}
-                  className={`card ${flip ? "flip" : ""}`}
-                  value={film}
-                  onClick={(e) => handleClick(e.target.id)}
-                  ref={frontEl}
-                >
-                  <img
-                    className="front"
-                    src={`${base_url}${film.poster_path}`}
-                    alt={film.title}
-                  />
-
-                  <div
-                    className="back"
-                    ref={backEl}
-                    onClick={(id) => handleClick(id)}
-                  >
-                    <p>{film.overview.substring(0, 200)}...</p>
-                  </div>
-                </div>
-
-                <p>
-                  <br></br>
-                  <Link
-                    className="gbar2"
-                    to={{
-                      pathname: "https://google.com/search?q=" + film.title,
-                    }}
-                    target="_blank"
-                  >
-                    Google Search
-                  </Link>
-                </p>
-              </div>
-            ))}
-        </div>
-        {/*       <div>
-        <Row2 title="Action Movies" fetchUrl={requests.fetchActionMovies} />
-      </div> */}
-        {/* 
-      <div>
-        <Row2 title="Top Rated" fetchUrl={requests.fetchTopRated} />
-        <Row2 title="Trending Now" fetchUrl={requests.fetchTrending} />
-        <Row2 title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
-      </div> */}
+        s
       </div>
     </React.Fragment>
   );

@@ -6,18 +6,18 @@ const SubForm = (props) => {
   const [sub, setSub] = useState(() => {
     return {
       subname: props.sub ? props.sub.subname : "",
-      price: props.sub ? props.sub.price : "",
+
       date: props.sub ? props.sub.date : "",
       content: props.sub ? props.sub.content : "",
     };
   });
 
   const [errorMsg, setErrorMsg] = useState("");
-  const { subname, price, content } = sub;
+  const { subname, content } = sub;
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    const values = [subname, price, content];
+    const values = [subname, content];
     let errorMsg = "";
 
     const allFieldsFilled = values.every((field) => {
@@ -29,7 +29,7 @@ const SubForm = (props) => {
       const sub = {
         id: uuidv4(),
         subname,
-        price,
+
         content,
         date: new Date(),
       };
@@ -51,14 +51,7 @@ const SubForm = (props) => {
           }));
         }
         break;
-      case "price":
-        if (value === "" || value.match(/^\d{1,}(\.\d{0,2})?$/)) {
-          setSub((prevState) => ({
-            ...prevState,
-            [name]: value,
-          }));
-        }
-        break;
+
       default:
         setSub((prevState) => ({
           ...prevState,
@@ -78,28 +71,29 @@ const SubForm = (props) => {
             type="text"
             name="subname"
             value={subname}
-            placeholder="Enter name of sub"
+            placeholder="Enter name of post"
             onChange={handleInputChange}
           />
         </Form.Group>
 
-        <Form.Group controlId="price">
+        {/*         <Form.Group controlId="price">
           <Form.Label>Post Price</Form.Label>
           <Form.Control
             className="input-control"
             type="text"
             name="price"
             value={price}
-            placeholder="Enter price of sub"
+            placeholder="Enter a placeholder"
             onChange={handleInputChange}
           />
-        </Form.Group>
+        </Form.Group> */}
 
         <Form.Group controlId="content">
           <Form.Label>Post Content</Form.Label>
           <Form.Control
+            as="textarea"
+            rows={15}
             className="input-control"
-            style={{ height: "200px" }}
             type="text"
             name="content"
             value={content}
@@ -108,7 +102,12 @@ const SubForm = (props) => {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit" className="submit-btn">
+        <Button
+          variant="primary"
+          size="sm"
+          type="submit"
+          className="submit-btn"
+        >
           Submit
         </Button>
       </Form>

@@ -44,6 +44,11 @@ align-items: center;
 display: flex;
 }
 
+pre {
+ white-space: pre-wrap;
+ word-wrap: break-word;
+ text-align: justify;
+}
 
 .gbar3 {
  border-radius: 4px !important;
@@ -270,8 +275,8 @@ overflow-x: auto ;
 
 .sub {
   margin: 5px;
-  width: 400px;
-  height: 100%;
+  width: 100%;
+  
   overflow: hidden;
   align-items: left;
   justify-content: left;

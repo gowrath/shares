@@ -11,14 +11,13 @@ import {
 import requests from "./Requests";
 
 const fetchUrl =
-  "https://api.themoviedb.org/3/discover/movie?api_key=d626fcf7416057dd64ed3964ae145a5d&with_genres=28";
+  "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/students";
 
-function Search(props) {
+function Search({ fetchUrl }) {
   const [searchValue, setSearchValue] = useState("");
+  const [students, setStudents] = useState([]);
 
-  //const [movies, setMovies] = useState([]);
-
-  const handleSearchInputChanges = (e) => {
+  /*   const handleSearchInputChanges = (e) => {
     setSearchValue(e.target.value);
   };
 
@@ -30,29 +29,32 @@ function Search(props) {
     e.preventDefault();
     fetchUrl.search(searchValue);
     resetInputField();
-  };
+  }; */
 
-  /* useEffect(() => {
+  useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
 
-      setMovies(request.data.results);
+      setStudents(requests.data);
       return request;
     }
     fetchData();
-  }
-  , [fetchUrl]); */
+  }, [fetchUrl]);
 
   return (
     <form className="search">
-      <input
-        value={searchValue}
-        onChange={handleSearchInputChanges}
-        type="text"
-      />
-      <input onClick={callSearchFunction} type="submit" value="SEARCH" />
+      <input value={searchValue} type="text" />
+      <input type="submit" value="SEARCH" />
     </form>
+
+    /*     <div className="center">
+      <Row2
+        key={student.id}
+        id={student.id}
+        name={student.name}
+        email={student.email}
+      />
+    </div> */
   );
 }
-
 export default Search;

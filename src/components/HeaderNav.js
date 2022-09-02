@@ -23,6 +23,7 @@ import CheckboxWithLabel from "./CheckboxWithLabel";
 import ActionMovies from "./ActionMovies";
 import Filtering from "./Filtering";
 import Filtering2 from "./Filtering2";
+import Search from "./Search";
 
 Userfront.init("jb747qn6");
 
@@ -55,6 +56,14 @@ function Header() {
         <li className="navbar-nav">
           <Link to="/filtering">Search</Link>
         </li>
+
+        <li className="navbar-nav">
+          <Link to="/search">Action</Link>
+        </li>
+
+        <li className="navbar-nav">
+          <Link to="/actionmovies">Action Movies</Link>
+        </li>
       </ul>
 
       <Switch>
@@ -77,6 +86,14 @@ function Header() {
 
         <Route path="/filtering">
           <Filtering />
+        </Route>
+
+        <Route path="/search">
+          <Search />
+        </Route>
+
+        <Route path="/actionmovies">
+          <ActionMovies />
         </Route>
 
         {/*         <Route path="/checkboxwithlabel">

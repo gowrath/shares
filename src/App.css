@@ -276,7 +276,7 @@ overflow-x: auto ;
 .sub {
   margin: 5px;
   width: 100%;
-  
+  height: 100%;
   overflow: hidden;
   align-items: left;
   justify-content: left;

@@ -24,6 +24,7 @@ import ActionMovies from "./ActionMovies";
 import Filtering from "./Filtering";
 import Filtering2 from "./Filtering2";
 import Search from "./Search";
+import Create from "./Create";
 
 Userfront.init("jb747qn6");
 
@@ -58,7 +59,7 @@ function Header() {
         </li>
 
         <li className="navbar-nav">
-          <Link to="/search">Action</Link>
+          <Link to="/create">Create</Link>
         </li>
 
         <li className="navbar-nav">
@@ -88,8 +89,8 @@ function Header() {
           <Filtering />
         </Route>
 
-        <Route path="/search">
-          <Search />
+        <Route path="/create">
+          <Create />
         </Route>
 
         <Route path="/actionmovies">

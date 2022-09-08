@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import ActionMovies from "./ActionMovies";
+import StudentTableRow from "./StudentTableRow";
 
 export default class Create extends Component {
   constructor(props) {
@@ -82,6 +83,7 @@ export default class Create extends Component {
             </Button>
           </Form>
         </div>
+
         <ActionMovies />
       </div>
     );

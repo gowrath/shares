@@ -1,7 +1,29 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Button from "react-bootstrap/Button";
 
 const RestExample = () => {
+  const obj = {
+    _id: "63118a526756c0470768e068",
+  };
+
+  const deleteStudent = (e) => {
+    axios
+      .delete(
+        "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/delete" +
+          "?id=" +
+          e.target.id
+      )
+      .then((res) => {
+        console.log("Student successfully deleted!");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    console.log(e.target.id);
+  };
+
   const [json, setJson] = useState({});
 
   const getJSON = async () => {
@@ -36,6 +58,16 @@ const RestExample = () => {
             <td>{nodes.name}</td>
             <td>
               <pre>{nodes.text}</pre>
+            </td>
+            <td>
+              <Button
+                id={nodes._id.$oid}
+                onClick={(e) => deleteStudent(e)}
+                size="sm"
+                variant="danger"
+              >
+                Delete
+              </Button>
             </td>
           </tr>
         ))}

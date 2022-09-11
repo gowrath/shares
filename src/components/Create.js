@@ -1,9 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import ActionMovies from "./ActionMovies";
 import StudentTableRow from "./StudentTableRow";
+import EditPost from "./EditPost";
+import Edit from "./Edit";
+import EditPost2 from "./EditPost2";
 
 export default class Create extends Component {
   constructor(props) {
@@ -83,7 +86,6 @@ export default class Create extends Component {
             </Button>
           </Form>
         </div>
-
         <ActionMovies />
       </div>
     );

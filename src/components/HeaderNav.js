@@ -25,6 +25,8 @@ import Filtering from "./Filtering";
 import Filtering2 from "./Filtering2";
 import Search from "./Search";
 import Create from "./Create";
+import EditPost from "./EditPost";
+import EditPost2 from "./EditPost2";
 
 Userfront.init("jb747qn6");
 
@@ -95,6 +97,15 @@ function Header() {
 
         <Route path="/actionmovies">
           <ActionMovies />
+        </Route>
+        <Route path="/editpost">
+          <EditPost />
+        </Route>
+        <Route path="/editpost2">
+          <EditPost2 />
+        </Route>
+        <Route path="/editpost2/:id">
+          <EditPost2 />
         </Route>
 
         {/*         <Route path="/checkboxwithlabel">

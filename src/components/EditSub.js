@@ -13,7 +13,7 @@ const EditSub = ({ history, subs, setSubs }) => {
   };
 
   return (
-    <div className='left'>
+    <div className="left">
       <SubForm sub={subToEdit} handleOnSubmit={handleOnSubmit} />
     </div>
   );

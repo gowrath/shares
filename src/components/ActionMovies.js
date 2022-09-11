@@ -1,11 +1,40 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
+import {
+  //BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
+import EditPost from "./EditPost";
+import Edit from "./EditPost";
+import Form from "react-bootstrap/Form";
+
+import { useParams } from "react-router-dom";
 
 const RestExample = () => {
-  const obj = {
-    _id: "63118a526756c0470768e068",
+  const [name, setName] = useState("");
+  const [text, setText] = useState("");
+  const [marker, setMarker] = useState("");
+  const [selectedItem, setSelectedItem] = useState("");
+
+  /*   const handleClick = (e) => {
+    setSelectedItem(e.target.id);
+  }; */
+
+  const onChangeStudentName = (e) => {
+    this.setState({ name: e.target.value });
   };
+
+  const onChangeStudentText = (e) => {
+    this.setState({ text: e.target.value });
+  };
+
+  /*   const editStudent = (e) => {
+    setSelectedItem(e.target.id);
+  }; */
 
   const deleteStudent = (e) => {
     axios
@@ -15,7 +44,7 @@ const RestExample = () => {
           e.target.id
       )
       .then((res) => {
-        console.log("Student successfully deleted!");
+        console.log("Post successfully deleted!");
       })
       .catch((error) => {
         console.log(error);
@@ -38,42 +67,54 @@ const RestExample = () => {
     getJSON();
   }, []);
 
-  var result = Object.values(json);
+  var results = Object.values(json);
 
-  console.log(result);
+  console.log(results);
 
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
+    <div>
+      <div>
+        <table className="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
 
-          <th scope="col">Text</th>
-        </tr>
-      </thead>
+              <th scope="col">Text</th>
+            </tr>
+          </thead>
 
-      <tbody>
-        {result.map((nodes, idx) => (
-          <tr key={idx}>
-            <td>{nodes.name}</td>
-            <td>
-              <pre>{nodes.text}</pre>
-            </td>
-            <td>
-              <Button
-                id={nodes._id.$oid}
-                onClick={(e) => deleteStudent(e)}
-                size="sm"
-                variant="danger"
-              >
-                Delete
-              </Button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+          <tbody>
+            {results.map((result, idx) => (
+              <tr key={idx}>
+                <td>{result.name}</td>
+                <td>
+                  <pre>{result.text}</pre>
+                </td>
+                <td></td>
+                <td>
+                  <Button
+                    id={result._id.$oid}
+                    onClick={(e) => deleteStudent(e)}
+                    size="sm"
+                    variant="danger"
+                  >
+                    Delete
+                  </Button>
+                  <Link
+                    id={result._id.$oid}
+                    className="edit-link"
+                    to={"./EditPost2/?" + result._id.$oid}
+                  >
+                    Edit
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+          <tfoot></tfoot>
+        </table>
+      </div>
+    </div>
   );
 };
-
 export default RestExample;

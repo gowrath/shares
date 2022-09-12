@@ -3,35 +3,25 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import {
   //BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom";
-import EditPost from "./EditPost";
-import Edit from "./EditPost";
-import Form from "react-bootstrap/Form";
 
-import { useParams } from "react-router-dom";
+  Link,
+} from "react-router-dom";
+
+//import { useParams } from "react-router-dom";
 
 const RestExample = () => {
-  const [name, setName] = useState("");
-  const [text, setText] = useState("");
-  const [marker, setMarker] = useState("");
-  const [selectedItem, setSelectedItem] = useState("");
-
   /*   const handleClick = (e) => {
     setSelectedItem(e.target.id);
   }; */
 
-  const onChangeStudentName = (e) => {
+  /*   const onChangeStudentName = (e) => {
     this.setState({ name: e.target.value });
   };
 
   const onChangeStudentText = (e) => {
     this.setState({ text: e.target.value });
   };
-
+ */
   /*   const editStudent = (e) => {
     setSelectedItem(e.target.id);
   }; */
@@ -69,7 +59,7 @@ const RestExample = () => {
 
   var results = Object.values(json);
 
-  console.log(results);
+  //console.log(results);
 
   return (
     <div>
@@ -90,7 +80,7 @@ const RestExample = () => {
                 <td>
                   <pre>{result.text}</pre>
                 </td>
-                <td></td>
+
                 <td>
                   <Button
                     id={result._id.$oid}
@@ -105,13 +95,12 @@ const RestExample = () => {
                     className="edit-link"
                     to={"./EditPost2/?" + result._id.$oid}
                   >
-                    Edit
+                    <Button size="sm">Edit</Button>
                   </Link>
                 </td>
               </tr>
             ))}
           </tbody>
-          <tfoot></tfoot>
         </table>
       </div>
     </div>

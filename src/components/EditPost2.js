@@ -4,7 +4,16 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import e from "cors";
 import ActionMovies from "./ActionMovies";
-import { useParams } from "react-router-dom";
+
+import {
+  //BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useParams,
+  useNavigate,
+} from "react-router-dom";
 
 const EditPost = () => {
   var url = window.location.search;
@@ -48,6 +57,8 @@ const EditPost = () => {
       text: form.text,
     };
 
+    //const navigate = useNavigate();
+
     /*   const handleClick = (e) => {
       setSelectedItem(e.target.id);
     }; */
@@ -66,6 +77,13 @@ const EditPost = () => {
       .catch((error) => {
         console.log(error);
       });
+
+    setTimeout(
+      () => window.location.assign("https://sharesub-5c6f8.web.app/create"),
+      2000
+    );
+
+    //setTimeout(() => navigate("./create"), 2000);
 
     // Redirect to Student List
     // this.props.history.push("/create");
@@ -90,7 +108,7 @@ const EditPost = () => {
             onChange={(e) => updateForm({ text: e.target.value })}
           >
             <Form.Label>Text</Form.Label>
-            <Form.Control type="text" />
+            <Form.Control type="text" rows={15} as="textarea" />
           </Form.Group>
 
           <Button

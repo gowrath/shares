@@ -1,9 +1,11 @@
 import React, { Component, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+
 import axios from "axios";
 import e from "cors";
 import ActionMovies from "./ActionMovies";
+import LoadingSpinner from "./LoadingSpinner";
 
 import {
   //BrowserRouter as Router,
@@ -24,6 +26,8 @@ const EditPost = () => {
     name: "",
     text: "",
   });
+
+  const [isLoading, setIsLoading] = useState(false);
 
   //let { id } = useParams();
 
@@ -51,6 +55,8 @@ const EditPost = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
+    setIsLoading(true);
 
     const editedForm = {
       name: form.name,
@@ -111,14 +117,10 @@ const EditPost = () => {
             <Form.Control type="text" rows={15} as="textarea" />
           </Form.Group>
 
-          <Button
-            variant="danger"
-            size="lg"
-            block="block"
-            type="submit"
-            //onClick={handleClick}
-          >
-            Update Post
+          <div></div>
+
+          <Button variant="danger" size="lg" block="block" type="submit">
+            {isLoading ? <LoadingSpinner /> : "Update Post"}
           </Button>
         </Form>
       </div>

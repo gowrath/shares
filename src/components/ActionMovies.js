@@ -6,10 +6,11 @@ import {
 
   Link,
 } from "react-router-dom";
+import EditPost2 from "./EditPost2";
 
 //import { useParams } from "react-router-dom";
 
-const RestExample = () => {
+const ActionMovies = (props) => {
   /*   const handleClick = (e) => {
     setSelectedItem(e.target.id);
   }; */
@@ -44,6 +45,8 @@ const RestExample = () => {
   };
 
   const [json, setJson] = useState({});
+
+  //const [content, setContent] = useState({});
 
   const getJSON = async () => {
     const res = await fetch(
@@ -106,4 +109,4 @@ const RestExample = () => {
     </div>
   );
 };
-export default RestExample;
+export default ActionMovies;

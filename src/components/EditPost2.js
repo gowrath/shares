@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -17,10 +17,41 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-const EditPost = () => {
+const EditPost2 = () => {
   var url = window.location.search;
   url = url.replace("?", "");
   console.log(url);
+
+  const [json, setJson] = useState({});
+
+  const getJSON = async () => {
+    const res = await fetch(
+      "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/readstudent" +
+        "?id=" +
+        url
+    );
+    const data = await res.json();
+    setJson(data);
+  };
+
+  useEffect(() => {
+    getJSON();
+  }, []);
+
+  var results = Object.values(json);
+
+  let arrayname = results.map((result, idx) => result.name);
+
+  let arraytext = results.map((result, idx) => result.text);
+
+  let n = arrayname.toString();
+  let t = arraytext.toString();
+
+  let obj = { n, t };
+
+  //const [change, setChange] = useState({ obj });
+
+  //console.log(obj);
 
   const [form, setForm] = useState({
     name: "",
@@ -29,15 +60,8 @@ const EditPost = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  //let { id } = useParams();
-
-  /*   const [post, setPost] = useState({
-    name: "22222",
-    text: "ggggggggggggggggg ---- hello",
-  });
- */
-  const [name, setName] = useState("");
-  const [text, setText] = useState("");
+  //const [name, setName] = useState("");
+  //const [text, setText] = useState("");
 
   function updateForm(value) {
     return setForm((prev) => {
@@ -86,7 +110,7 @@ const EditPost = () => {
 
     setTimeout(
       () => window.location.assign("https://sharesub-5c6f8.web.app/create"),
-      2000
+      5000
     );
 
     //setTimeout(() => navigate("./create"), 2000);
@@ -101,20 +125,25 @@ const EditPost = () => {
         <Form onSubmit={onSubmit}>
           <Form.Group
             controlId="Name"
-            value={form.name}
-            onChange={(e) => updateForm({ name: e.target.value })}
+            value={obj.n}
+            onChange={(e) => updateForm({ name: e.target.value + "" })}
           >
             <Form.Label>Name</Form.Label>
-            <Form.Control type="text" />
+            <Form.Control type="text" defaultValue={obj.n} />
           </Form.Group>
 
           <Form.Group
             controlId="Text"
-            value={form.text}
-            onChange={(e) => updateForm({ text: e.target.value })}
+            value={obj.t}
+            onChange={(e) => updateForm({ text: e.target.value + "" })}
           >
             <Form.Label>Text</Form.Label>
-            <Form.Control type="text" rows={15} as="textarea" />
+            <Form.Control
+              type="text"
+              rows={15}
+              as="textarea"
+              defaultValue={obj.t}
+            />
           </Form.Group>
 
           <div></div>
@@ -128,4 +157,4 @@ const EditPost = () => {
   );
 };
 
-export default EditPost;
+export default EditPost2;

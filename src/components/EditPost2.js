@@ -44,24 +44,18 @@ const EditPost2 = () => {
 
   let arraytext = results.map((result, idx) => result.text);
 
-  let n = arrayname.toString();
-  let t = arraytext.toString();
+  let nameplace = arrayname.toString();
+  let textplace = arraytext.toString();
 
-  let obj = { n, t };
+  let obj = { nameplace, textplace };
 
-  //const [change, setChange] = useState({ obj });
+  console.log(obj);
 
-  //console.log(obj);
+  const [form, setForm] = useState({ obj });
 
-  const [form, setForm] = useState({
-    name: "",
-    text: "",
-  });
+  console.log(form);
 
   const [isLoading, setIsLoading] = useState(false);
-
-  //const [name, setName] = useState("");
-  //const [text, setText] = useState("");
 
   function updateForm(value) {
     return setForm((prev) => {
@@ -81,6 +75,12 @@ const EditPost2 = () => {
     e.preventDefault();
 
     setIsLoading(true);
+
+    function updateForm2(value) {
+      return setForm((prev) => {
+        return { ...prev, ...obj };
+      });
+    }
 
     const editedForm = {
       name: form.name,
@@ -108,10 +108,10 @@ const EditPost2 = () => {
         console.log(error);
       });
 
-    setTimeout(
+    /*     setTimeout(
       () => window.location.assign("https://sharesub-5c6f8.web.app/create"),
       5000
-    );
+    ); */
 
     //setTimeout(() => navigate("./create"), 2000);
 
@@ -125,16 +125,16 @@ const EditPost2 = () => {
         <Form onSubmit={onSubmit}>
           <Form.Group
             controlId="Name"
-            value={obj.n}
+            value={obj.nameplace}
             onChange={(e) => updateForm({ name: e.target.value + "" })}
           >
             <Form.Label>Name</Form.Label>
-            <Form.Control type="text" defaultValue={obj.n} />
+            <Form.Control type="text" defaultValue={obj.nameplace} />
           </Form.Group>
 
           <Form.Group
             controlId="Text"
-            value={obj.t}
+            value={obj.textplace}
             onChange={(e) => updateForm({ text: e.target.value + "" })}
           >
             <Form.Label>Text</Form.Label>
@@ -142,7 +142,7 @@ const EditPost2 = () => {
               type="text"
               rows={15}
               as="textarea"
-              defaultValue={obj.t}
+              defaultValue={obj.textplace}
             />
           </Form.Group>
 

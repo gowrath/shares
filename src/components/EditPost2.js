@@ -44,48 +44,60 @@ const EditPost2 = () => {
 
   let arraytext = results.map((result, idx) => result.text);
 
-  let nameplace = arrayname.toString();
-  let textplace = arraytext.toString();
+  let name = arrayname.toString();
+  let text = arraytext.toString();
 
-  let obj = { nameplace, textplace };
+  let obj = { name, text };
 
   console.log(obj);
 
-  const [form, setForm] = useState({ obj });
-
-  console.log(form);
+  const [form, setForm] = useState(obj);
 
   const [isLoading, setIsLoading] = useState(false);
 
-  function updateForm(value) {
+  function updateFormName(value) {
     return setForm((prev) => {
-      return { ...prev, ...value };
+      return { text, ...value };
     });
   }
 
-  /*   const onChangeStudentName = (e) => {
-    this.setState({ name: e.target.value });
-  };
+  function updateFormText(value) {
+    return setForm((prev) => {
+      return { name, ...value };
+    });
+  }
 
-  const onChangeStudentText = (e) => {
-    this.setState({ text: e.target.value });
-  }; */
+  console.log(form);
 
   const onSubmit = (e) => {
     e.preventDefault();
 
+    console.log(e.target.value);
+
     setIsLoading(true);
 
-    function updateForm2(value) {
-      return setForm((prev) => {
-        return { ...prev, ...obj };
-      });
+    if (form.name === name) {
+      console.log("name is same");
+    }
+
+    if (form.text !== text) {
+      console.log("name is different");
     }
 
     const editedForm = {
       name: form.name,
       text: form.text,
     };
+
+    function updateForm(value) {
+      return setForm(form);
+    }
+
+    console.log(editedForm);
+    console.log(form);
+
+    console.log(name);
+    console.log(text);
 
     //const navigate = useNavigate();
 
@@ -98,7 +110,8 @@ const EditPost2 = () => {
         "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/editpost" +
           "?id=" +
           url,
-        editedForm
+        editedForm,
+        obj
       )
       .then((res) => {
         console.log(res.data);
@@ -108,10 +121,10 @@ const EditPost2 = () => {
         console.log(error);
       });
 
-    /*     setTimeout(
+    setTimeout(
       () => window.location.assign("https://sharesub-5c6f8.web.app/create"),
       5000
-    ); */
+    );
 
     //setTimeout(() => navigate("./create"), 2000);
 
@@ -122,27 +135,27 @@ const EditPost2 = () => {
   return (
     <div className="write-center">
       <div>
-        <Form onSubmit={onSubmit}>
+        <Form onSubmit={onSubmit} value={form}>
           <Form.Group
             controlId="Name"
-            value={obj.nameplace}
-            onChange={(e) => updateForm({ name: e.target.value + "" })}
+            value={obj.name}
+            onChange={(e) => updateFormName({ name: e.target.value })}
           >
             <Form.Label>Name</Form.Label>
-            <Form.Control type="text" defaultValue={obj.nameplace} />
+            <Form.Control type="text" defaultValue={obj.name} />
           </Form.Group>
 
           <Form.Group
             controlId="Text"
-            value={obj.textplace}
-            onChange={(e) => updateForm({ text: e.target.value + "" })}
+            value={obj.text}
+            onChange={(e) => updateFormText({ text: e.target.value })}
           >
             <Form.Label>Text</Form.Label>
             <Form.Control
               type="text"
               rows={15}
               as="textarea"
-              defaultValue={obj.textplace}
+              defaultValue={obj.text}
             />
           </Form.Group>
 

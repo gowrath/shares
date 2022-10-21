@@ -62,7 +62,7 @@ const ActionMovies = (props) => {
 
   var results = Object.values(json);
 
-  //console.log(results);
+  console.log(results);
 
   return (
     <div>

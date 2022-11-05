@@ -27,6 +27,7 @@ import Search from "./Search";
 import Create from "./Create";
 import EditPost from "./EditPost";
 import EditPost2 from "./EditPost2";
+import ShortStory from "./ShortStory";
 
 Userfront.init("jb747qn6");
 
@@ -65,7 +66,7 @@ function Header() {
         </li>
 
         <li className="navbar-nav">
-          <Link to="/actionmovies">Action Movies</Link>
+          <Link to="/shortstory">Short Story</Link>
         </li>
       </ul>
 
@@ -95,8 +96,8 @@ function Header() {
           <Create />
         </Route>
 
-        <Route path="/actionmovies">
-          <ActionMovies />
+        <Route path="/shortstory">
+          <ShortStory />
         </Route>
         <Route path="/editpost">
           <EditPost />

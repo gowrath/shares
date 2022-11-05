@@ -375,7 +375,9 @@ height: 25px;
 
 
 
-
+.pre {
+ white-space:pre-wrap;
+}
 
 
 .write-center {
@@ -390,6 +392,13 @@ height: 25px;
   margin: 0px;
   display: flex;
   flex-direction: column;
+}
+
+.write-center3 {
+ padding: 5px;
+ margin: 10px;
+ display: flex;
+ flex-direction: column;
 }
 
 .navbar {

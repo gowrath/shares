@@ -1,15 +1,14 @@
-
 # Share Subscriptions Web Application
 
-This is a tool built in the React framework to help you manage, calculate and add the costs of your monthly subscriptions. 
+This is a tool built in the React framework to help you manage, calculate and add the costs of your monthly subscriptions.
 
 Digital subscriptions are ubiqitous. So is overpaying for them while a friend has one you need. Why not take advantage of 'friends and family' sharing policies of such services? Sharesub is the solution to this problem.
 
-It is: 
+It is:
 
-1) A site to share information with friends about which subscriptions you have and they do not.
-2) A portal service to share the latest hot TV show or movie (sort by relevance and topical).
-3) A cost calculator to figure out how much you are spending per month. 
+1. A site to share information with friends about which subscriptions you have and they do not.
+2. A portal service to share the latest hot TV show or movie (sort by relevance and topical).
+3. A cost calculator to figure out how much you are spending per month.
 
 The cost calculator is a web scraper from the various subscription websites: Netflix, HBO, Disney Plus.
 

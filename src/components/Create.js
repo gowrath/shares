@@ -7,6 +7,7 @@ import StudentTableRow from "./StudentTableRow";
 import EditPost from "./EditPost";
 import Edit from "./Edit";
 import EditPost2 from "./EditPost2";
+import Filtering from "./Filtering";
 
 export default class Create extends Component {
   constructor(props) {

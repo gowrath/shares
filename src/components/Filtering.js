@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "./axios";
 import Row2 from "./Row2";
 import requests from "./Requests";
+import Create from "./Create";
 
 import {
   Button,
@@ -168,6 +169,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
         <Row2 title="Trending Now" fetchUrl={requests.fetchTrending} />
         <Row2 title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
       </div> */}
+      <Create text={setDescription} />
     </div>
   );
 }

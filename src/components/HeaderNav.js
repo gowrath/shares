@@ -27,7 +27,9 @@ import Search from "./Search";
 import Create from "./Create";
 import EditPost from "./EditPost";
 import EditPost2 from "./EditPost2";
+import EditPost3 from "./EditPost3";
 import ShortStory from "./ShortStory";
+import NewRefactor from "./NewRefactor";
 
 Userfront.init("jb747qn6");
 
@@ -58,7 +60,7 @@ function Header() {
         </li>
 
         <li className="navbar-nav">
-          <Link to="/filtering">Search</Link>
+          <Link to="/search">Search</Link>
         </li>
 
         <li className="navbar-nav">
@@ -66,7 +68,7 @@ function Header() {
         </li>
 
         <li className="navbar-nav">
-          <Link to="/shortstory">Short Story</Link>
+          <Link to="/newrefactor">Refactoring</Link>
         </li>
       </ul>
 
@@ -88,7 +90,7 @@ function Header() {
           <Chat />
         </Route>
 
-        <Route path="/filtering">
+        <Route path="/search">
           <Filtering />
         </Route>
 
@@ -96,8 +98,8 @@ function Header() {
           <Create />
         </Route>
 
-        <Route path="/shortstory">
-          <ShortStory />
+        <Route path="/newrefactor">
+          <NewRefactor />
         </Route>
         <Route path="/editpost">
           <EditPost />

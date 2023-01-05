@@ -7,6 +7,7 @@ import {
   Link,
 } from "react-router-dom";
 import EditPost2 from "./EditPost2";
+import EditPost3 from "./EditPost3";
 
 //import { useParams } from "react-router-dom";
 

@@ -15,12 +15,16 @@ import {
   Redirect,
   useParams,
   useNavigate,
+  useHistory,
 } from "react-router-dom";
+
+//Rewrote Edit.js into a functional component
 
 const EditPost2 = () => {
   var url = window.location.search;
   url = url.replace("?", "");
   console.log(url);
+  const history = useHistory();
 
   const [json, setJson] = useState({});
 
@@ -39,6 +43,16 @@ const EditPost2 = () => {
   }, []);
 
   var results = Object.values(json);
+
+  console.log(json);
+  console.log(results);
+
+  /*   var object = results.reduce((oj, item) => {
+    Object.assign(oj, item);
+    return oj;
+  }, {});
+
+  console.log(object); */
 
   let arrayname = results.map((result, idx) => result.name);
 
@@ -121,10 +135,7 @@ const EditPost2 = () => {
         console.log(error);
       });
 
-    setTimeout(
-      () => window.location.assign("https://sharesub-5c6f8.web.app/create"),
-      5000
-    );
+    setTimeout(() => history.push("/create"), 5000);
 
     //setTimeout(() => navigate("./create"), 2000);
 

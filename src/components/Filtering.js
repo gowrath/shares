@@ -169,7 +169,8 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
         <Row2 title="Trending Now" fetchUrl={requests.fetchTrending} />
         <Row2 title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
       </div> */}
-      <Create text={setDescription} />
+
+      <Create />
     </div>
   );
 }

@@ -26,6 +26,7 @@ const EditPost2 = () => {
   console.log(url);
   const history = useHistory();
 
+  const [isLoading, setIsLoading] = useState(false);
   const [json, setJson] = useState({});
 
   const getJSON = async () => {
@@ -55,7 +56,6 @@ const EditPost2 = () => {
   console.log(object); */
 
   let arrayname = results.map((result, idx) => result.name);
-
   let arraytext = results.map((result, idx) => result.text);
 
   let name = arrayname.toString();
@@ -66,8 +66,6 @@ const EditPost2 = () => {
   console.log(obj);
 
   const [form, setForm] = useState(obj);
-
-  const [isLoading, setIsLoading] = useState(false);
 
   function updateFormName(value) {
     return setForm((prev) => {

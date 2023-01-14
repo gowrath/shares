@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import ActionMovies from "./ActionMovies";
 import StudentTableRow from "./StudentTableRow";
@@ -53,6 +54,8 @@ export default class Create extends Component {
 
   render() {
     return (
+
+
       <div className="write-center">
         <div className="form-wrapper">
           <Form onSubmit={this.onSubmit}>

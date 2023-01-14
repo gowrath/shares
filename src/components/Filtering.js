@@ -12,7 +12,7 @@ import {
 } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
-import { SettingOutlined } from "@ant-design/icons";
+
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 

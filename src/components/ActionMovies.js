@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import EditPost2 from "./EditPost2";
 import EditPost3 from "./EditPost3";
+import CommentModal from "./Modal";
 
 //import { useParams } from "react-router-dom";
 
@@ -63,24 +64,26 @@ const ActionMovies = (props) => {
 
   var results = Object.values(json);
 
-  console.log(results);
+
 
   return (
     <div>
-      <div>
+      <div className="write-center4">
         <table className="table">
           <thead>
             <tr>
-              <th scope="col">Name</th>
+              Movie Review
 
-              <th scope="col">Text</th>
+           
             </tr>
           </thead>
 
           <tbody>
             {results.map((result, idx) => (
+              <div>
+                <tr>{result.name}</tr>
               <tr key={idx}>
-                <td>{result.name}</td>
+                
                 <td>
                   <pre>{result.text}</pre>
                 </td>
@@ -101,10 +104,21 @@ const ActionMovies = (props) => {
                   >
                     <Button size="sm">Edit</Button>
                   </Link>
+                  
                 </td>
               </tr>
+            
+            
+              <tr>
+                <CommentModal />
+              </tr>
+              
+
+              
+            </div>
             ))}
           </tbody>
+
         </table>
       </div>
     </div>

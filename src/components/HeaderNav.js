@@ -30,6 +30,8 @@ import EditPost2 from "./EditPost2";
 import EditPost3 from "./EditPost3";
 import ShortStory from "./ShortStory";
 import NewRefactor from "./NewRefactor";
+import CreateRF from "./CreateRF";
+import Modal from "./Modal";
 
 Userfront.init("jb747qn6");
 
@@ -68,8 +70,12 @@ function Header() {
         </li>
 
         <li className="navbar-nav">
-          <Link to="/newrefactor">Refactoring</Link>
+          <Link to="/createrf">Refactored Create</Link>
         </li>
+
+ {/*        <li className="navbar-nav">
+          <Link to="/modal">Modal</Link>
+        </li> */}
       </ul>
 
       <Switch>
@@ -98,8 +104,8 @@ function Header() {
           <Create />
         </Route>
 
-        <Route path="/newrefactor">
-          <NewRefactor />
+        <Route path="/createrf">
+          <CreateRF />
         </Route>
         <Route path="/editpost">
           <EditPost />
@@ -109,6 +115,10 @@ function Header() {
         </Route>
         <Route path="/editpost2/:id">
           <EditPost2 />
+        </Route>
+
+        <Route path="/modal">
+          <Modal />
         </Route>
 
         {/*         <Route path="/checkboxwithlabel">

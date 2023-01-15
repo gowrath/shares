@@ -23,19 +23,18 @@
 }
 
 table, th, td, tr {
-  border: 5px solid;
+
   padding-left: 3px;
   padding-right: 3px;
-  border-radius: 5px;
-  border-color: black;
+
+ 
 }
 
 table, tbody, th, td, tr {
-  border: 1px solid;
+
   padding-left: 3px;
   padding-right: 3px;
-  border-radius: 5px;
-  border-color: black;
+
 }
 
 .tablePadding {

@@ -7,8 +7,11 @@ export default function App() {
   return (
     <Router>
       <div
+        
         style={{
-          height: "1200px",
+          backgroundColor: '#000000',
+          
+          
         }}
       >
         <h1 className="center">ShareSub</h1>

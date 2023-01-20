@@ -72,7 +72,7 @@ const ActionMovies = (props) => {
         <table className="table">
           <thead>
             <tr>
-              Movie Review
+              <h4>Movie Review</h4>
 
            
             </tr>
@@ -81,10 +81,11 @@ const ActionMovies = (props) => {
           <tbody>
             {results.map((result, idx) => (
               <div>
-                <tr>{result.name}</tr>
-              <tr key={idx}>
+
+              <tr key={idx} className="gbar4">
                 
                 <td>
+                  <h5>{result.name}</h5>
                   <pre>{result.text}</pre>
                 </td>
 
@@ -106,14 +107,19 @@ const ActionMovies = (props) => {
                   </Link>
                   
                 </td>
+
+
               </tr>
             
             
-              <tr>
+              <tr className="gbar">
                 <CommentModal />
               </tr>
               
-
+              <tr>
+                <div><br></br>
+                <br></br></div>
+              </tr>
               
             </div>
             ))}

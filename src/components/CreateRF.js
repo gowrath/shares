@@ -6,6 +6,7 @@ import axios from "axios";
 import LoadingSpinner from "./LoadingSpinner";
 import { useHistory } from "react-router-dom";
 import ActionMovies from "./ActionMovies"
+import ReviewModal from "./ReviewModal";
 
 // EditPost3 is now a functional component
 const CreateRF = () => {
@@ -90,70 +91,13 @@ return (
   <div className="write-center">
 
 <div className="center">
-  <Button variant="primary" onClick={handleShow}>
-  Launch demo modal
-</Button>
 
-<Modal show={show} onHide={handleClose}>
-  <Modal.Header closeButton>
-    <Modal.Title>Comment</Modal.Title>
-  </Modal.Header>
-  <Modal.Body>
+                <ReviewModal />
+              
 
-
-
-
-
-
-  </Modal.Body>
-  <Modal.Footer>
-    <Button variant="secondary" onClick={handleClose}>
-      Close
-    </Button>
-    <Button variant="primary" onClick={handleClose}>
-      Save Changes
-    </Button>
-  </Modal.Footer>
-</Modal>
 </div>
 
-    <div>
-      <Form onSubmit={onSubmitCreate}>
-        <Form.Group
-          controlId="Name"
-          value={form.name}
-          onChange={(event) => updateFormName(event)}
-        >
-          <Form.Label>Name</Form.Label>
-          <Form.Control type="text" defaultValue={form.name} />
-        </Form.Group>
 
-        <Form.Group
-          controlId="Text"
-          value={form.text}
-          onChange={(event) => updateFormText(event)}
-        >
-          <Form.Label>Text</Form.Label>
-          <Form.Control
-            type="text"
-            rows={15}
-            as="textarea"
-            defaultValue={form.text}
-          />
-        </Form.Group>
-
-
-        <Button
-              variant="danger"
-              size="lg"
-              block="block"
-              type="submit"
-              className="mt-4"
-            >
-              Create Post
-            </Button>
-      </Form>
-    </div>
     <div className="write-center4">
     <ActionMovies />
     </div>

@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import ActionMovies from "./ActionMovies"
 
 // Modal is now a functional component
-const CommentModal = () => {
+const ReviewModal = () => {
 
 
 // Get the history object to use for navigation
@@ -89,14 +89,14 @@ return (
 
   <div className="write-center4">
 
-<div>
+<div className="write-center4">
   <Button variant="primary" onClick={handleShow}>
-  Write comment
+  Write review
 </Button>
 
 <Modal show={show} onHide={handleClose}>
   <Modal.Header closeButton>
-    <Modal.Title>Comment</Modal.Title>
+    <Modal.Title>Movie Review</Modal.Title>
   </Modal.Header>
   <Modal.Body>
 
@@ -126,11 +126,7 @@ return (
         </Form.Group>
 
 
-
-
-      </Form>
-
-
+    </Form>
 
 
     
@@ -151,4 +147,4 @@ return (
 );
 };
 
-export default CommentModal;
+export default ReviewModal;

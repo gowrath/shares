@@ -22,19 +22,34 @@
  height: 25px;
 }
 
-table, th, td, tr {
-
+table, tr {
+color: white;
   padding-left: 3px;
   padding-right: 3px;
 
  
 }
 
-table, tbody, th, td, tr {
-
+tbody {
+color: black;
   padding-left: 3px;
   padding-right: 3px;
 
+}
+
+th {
+  color: white;
+    padding-left: 3px;
+    padding-right: 3px;
+  
+  }
+  
+
+td {
+  border: red solid 1px;
+  color: white;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .tablePadding {
@@ -47,6 +62,8 @@ table, tbody, th, td, tr {
   margin-right: 5px;
   background-color: yellowgreen;
 }
+
+.h1 { margin-top: 0; }
 
 
 .movietitle {
@@ -83,8 +100,8 @@ color: white;
 
 .gbar2 {
   border-radius: 4px !important;
-  background-color: #7FFFD4;
-  
+  background-color: #143B5E;
+  color: black;
 padding: 2px;
   
 font-size: .7em;
@@ -93,6 +110,12 @@ justify-content: center;
 align-items: center;
 
 display: flex;
+}
+
+.gbar4 {
+  color: black;
+  
+
 }
 
 pre {
@@ -140,7 +163,7 @@ justify-content: top;
   padding: 0px 5px 0px 5px;
 max-width: 100%;
 font-size: .8em;
-
+color: white;
 }
 
 .card-grid {
@@ -227,8 +250,8 @@ position: relative;
  column-gap: 1em;
 
 max-width: 200%;
-color: black;
-  background-color: black;
+
+  background-color:black;
 
 
 display: grid;
@@ -347,10 +370,14 @@ overflow-x: auto ;
   padding-left: 50px;
 }
 
+
+
 .center {
   margin: 5px;
   padding: 5px;
-
+  color: white;
+ background-color: #000000;
+font: black;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -364,6 +391,7 @@ overflow-x: auto ;
 
 .center2 {
 
+  color: white;
 height: 25px;
 
   display: flex;
@@ -384,6 +412,7 @@ height: 25px;
     justify-content: center;
     align-items: center;
   margin: 7px;
+  color: white;
   }
 
 .parentcenter {
@@ -411,6 +440,7 @@ height: 25px;
   margin: 7px;
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 .write-center2 {
@@ -435,10 +465,18 @@ height: 25px;
   flex-direction: column;
  }
  
+ .write-center5 {
+  padding: 5px;
+  margin: 7px;
+  display: flex;
+  flex-direction: column;
+  color: lightblue;
+}
+
 
 .navbar {
   color: black;
-  background-color: #7FFFD4;
+  background-color: #143B5E;
   height: 70px;
   align-items: center;
 
@@ -490,25 +528,25 @@ height: 25px;
 
 a:link {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 a:visited {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 a:hover {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 a:active {
   text-decoration: underline;
 }
 
-.navBar-nav {
-
+.navbar-nav {
+color: white;
   margin:0px;
   padding:0px;
 }
@@ -536,11 +574,11 @@ a:active {
 }
 
 .ce-chat-list {
-  background-color: rgb(240, 240, 240) !important;
+  background-color:  #143B5E!important;
 }
 
 .ce-chats-container {
-  background-color: rgb(240, 240, 240) !important;
+  background-color:  #143B5E!important;
 }
 
 .ce-active-chat-card {
@@ -550,16 +588,18 @@ a:active {
 }
 
 .ce-chat-subtitle-text {
-  color: #595959 !important;
+  color: black;
 }
 
 .ce-chat-form-container {
   padding-bottom: 20px !important;
+  background-color: #143B5E!important;
 }
 
 .ce-text-input {
   border-radius: 6px !important;
   border: 1px solid #3b2a50 !important;
+  background-color: #143B5E!important;
 }
 
 .ce-primary-button {
@@ -584,6 +624,7 @@ svg {
 text,
 svg {
   vertical-align: top !important;
+  color: #143B5E!important;
 }
 
 .anticon {
@@ -591,12 +632,12 @@ svg {
 }
 
 .ce-danger-button {
-  background-color: white !important;
+  background-color: #143B5E !important;
   border-radius: 22px !important;
 }
 
 .ce-settings {
-  background-color: rgb(240, 240, 240) !important;
+  background-color:  #143B5E !important;
 }
 
 .ce-autocomplete-input {
@@ -607,15 +648,18 @@ svg {
 .ce-autocomplete-options {
   border-radius: 6px !important;
   border: 1px solid #3b2a50 !important;
-  background-color: white !important;
+  background-color: #143B5E!important;
 }
 
 .ce-chat-settings-container {
   padding-top: 12px !important;
+  background-color: #143B5E!important;
+  color: #143B5E!important;
 }
 
 .ce-chat-avatars-row {
   display: none !important;
+  background-color: #143B5E!important;
 }
 
 /* CUSTOM FEED */
@@ -624,13 +668,14 @@ svg {
   height: 100%;
   width: 90%;
   overflow: scroll;
-  background-color: rgb(240, 240, 240);
+  background-color: black;
 }
 
 .chat-title-container {
   width: calc(100% - 36px);
   padding: 18px;
   text-align: center;
+  color: black;
 }
 
 .chat-title {
@@ -644,6 +689,7 @@ svg {
   font-weight: 600;
   font-size: 12px;
   padding-top: 4px;
+  
 }
 
 .message-row {
@@ -651,18 +697,20 @@ svg {
   width: 100%;
   display: flex;
   margin-left: 18px;
+  color: black;
 }
 
 .message-block {
   width: 100%;
   display: inline-block;
+  color: black;
 }
 
 .message-avatar {
   width: 44px;
   height: 44px;
   border-radius: 22px;
-  color: white;
+  color: black;
   text-align: center;
   background-repeat: no-repeat;
   background-position: center;
@@ -674,6 +722,7 @@ svg {
   font-size: 16px;
   border-radius: 6px;
   max-width: 60%;
+  color: black;
 }
 
 .message-image {
@@ -708,20 +757,21 @@ svg {
   bottom: 0px;
   width: calc(100% - 36px);
   padding: 18px;
-  background-color: rgb(240, 240, 240);
+  background-color: black;
+  color: #143B5E!important;
 }
 
 .message-form {
   overflow: hidden;
   border-radius: 6px;
   border: 1px solid #3b2a50;
-  background-color: white;
+  background-color: black;
 }
 
 .message-input {
   height: 40px;
   width: calc(100% - 132px);
-  background-color: white;
+  background-color:black;
   border: 1px solid white;
   padding: 0px 18px;
   outline: none;
@@ -736,7 +786,7 @@ svg {
 
 .send-button {
   height: 42px;
-  background-color: white;
+  background-color: black;
   border: 1px solid white;
   padding: 0px 18px;
   cursor: pointer;
@@ -837,13 +887,14 @@ svg {
 
 
 body {
-  background-color: #FFFFFF;
+  background-color: #000000;
   margin: 0;
 }
 
 .container {
   max-width: 900px;
   margin: 1rem 2rem;
+  color: #143B5E!important;
 }
 
 .header {

@@ -72,7 +72,7 @@ export default class Create extends Component {
               <Form.Label>Text</Form.Label>
               <Form.Control
                 as="textarea"
-                rows={15}
+                rows={10}
                 type="text"
                 value={this.state.text}
                 onChange={this.onChangeStudentText}

@@ -12,7 +12,7 @@ const SignupForm = Userfront.build({
 const Chat = () => {
   return (
 
-    <div className="center">
+    <div className="write-center4">
     <ChatEngine 
       
       projectID="b7fb8459-6f80-4cc3-a71c-076cac16ae4e"

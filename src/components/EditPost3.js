@@ -29,7 +29,7 @@ const handleShow = () => setShow(true);
 // Fetch the data for the post to be edited
 const getJSON = async () => {
 const res = await fetch(
-"https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/readstudent" +
+"https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-rvgpo/service/get/incoming_webhook/readstudent" +
 "?id=" +
 url
 );
@@ -100,7 +100,7 @@ const editedForm = {
 // Make a PUT request to update the post with the edited form data
 axios
   .put(
-    "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/editpost" +
+    "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-rvgpo/service/get/incoming_webhook/editpost" +
       "?id=" +
       url,
     editedForm,

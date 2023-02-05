@@ -11,7 +11,7 @@ import {
 import requests from "./Requests";
 
 const fetchUrl =
-  "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/students";
+  "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-rvgpo/service/get/incoming_webhook/read";
 
 function Search({ fetchUrl }) {
   const [searchValue, setSearchValue] = useState("");

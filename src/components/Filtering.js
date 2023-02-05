@@ -129,7 +129,7 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
 
                 <div
                   ref={frontEl}
-                  className="card"
+                  className="card2"
                   id={id}
                   value={nodes.overview}
                   onClick={(e) => {
@@ -137,12 +137,12 @@ function ActionMovies({ title, fetchUrl, video, flashcard }) {
                   }}
                 >
                   <img
-                    className="card"
+                    className="card2"
                     src={`${base_url}${nodes.poster_path}`}
                     alt={nodes.title}
                   />
 
-                  <div className="back" ref={backEl}>
+                  <div className="back2" ref={backEl}>
                     <p>{nodes.overview}</p>
                   </div>
                 </div>

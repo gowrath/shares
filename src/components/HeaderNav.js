@@ -99,7 +99,9 @@ function Header() {
         <Route path="/search">
           <Filtering />
         </Route>
-
+        <Route path="/actionmovies">
+          <ActionMovies />
+        </Route>
         <Route path="/create">
           <Create />
         </Route>

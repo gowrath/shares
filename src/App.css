@@ -22,7 +22,49 @@
  height: 25px;
 }
 
-table, tr {
+.body {
+  background-color: white;
+
+}
+
+.light-mode {
+  background-color: white;
+
+}
+
+.dark-mode {
+  background-color: black;
+}
+
+
+* {
+  font-family: Noto Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Noto Sans,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  letter-spacing: 0.5px;
+}
+
+
+.reviewtext {
+  color: black;
+  font-family: Noto Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Noto Sans,
+  Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+  Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji, monospace;
+
+}
+
+.reviewtext2 {
+  color: black;
+
+  font-family: Noto Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Noto Sans,
+  Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+  Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji, monospace;
+
+}
+
+
+
+table {
 color: white;
   padding-left: 3px;
   padding-right: 3px;
@@ -30,11 +72,20 @@ color: white;
  
 }
 
+tr {
+  color: white;
+    padding-left: 3px;
+    padding-right: 3px;
+
+   
+  }
+
 tbody {
 color: black;
   padding-left: 3px;
   padding-right: 3px;
 
+ 
 }
 
 th {
@@ -46,7 +97,7 @@ th {
   
 
 td {
-  border: red solid 1px;
+  border: black solid 1px;
   color: white;
   padding-left: 3px;
   padding-right: 3px;
@@ -114,14 +165,27 @@ display: flex;
 
 .gbar4 {
   color: black;
-  
+  font-family: Noto Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Noto Sans,
+  Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+  Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji, monospace;
 
 }
+
+.gbar5 {
+  color: white;
+  font-family: Noto Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Noto Sans,
+  Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+  Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji, monospace;
+
+}
+
+
 
 pre {
  white-space: pre-wrap;
  word-wrap: break-word;
  text-align: justify;
+
 }
 
 .gbar3 {
@@ -166,44 +230,6 @@ font-size: .8em;
 color: white;
 }
 
-.card-grid {
-  display: grid;
-  align-items: center;
-
-  gap: .1rem;
-  margin: 5px 5px 5px 5px;
-  padding: 0px;
-max-width: 100%;
-
-
-} 
-
-
-
-
-.card:hover {
---translate-y: -2px;
-box-shadow: 0 0 5px 2px rgba(0,0,0,0.5);
-opacity: 1;
-}
-
-.card.flip {
-  --rotate-y: 180deg;
-}
-
-
-
-.card .front,
-.card .back {
-  position: absolute;
- 
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-
-
-  
- 
-}
 
 
 
@@ -261,6 +287,60 @@ overflow-x: auto ;
 
 }
 
+.card2 {
+  
+    
+ 
+ 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+   
+ 
+ 
+ background-color: transparent;
+ 
+ position: relative;
+ border-radius: .35rem;
+ box-shadow: 0 0 3px 3px rgba(0,0,0,0.5);
+
+ 
+ transition: 0ms;
+ cursor: pointer;
+ transform: perspective(1000px) rotateY(var(--rotate-y,0)) translateY(var(--translate-y,0));
+
+ font-size:.8em;
+    
+  
+  
+ 
+ 
+  
+
+}
+
+
+
+
+.card2 .back {
+  transform: rotateY(180deg);
+  height: 225px;
+  max-width: 100%;
+
+  font-size:.5em;
+  visibility: hidden;
+}
+
+.back2 {
+  transform: rotateY(180deg);
+  height: 225px;
+  max-width: 100%;
+
+  font-size:.5em;
+  visibility: hidden;
+}
+
 
 
 .card {
@@ -270,11 +350,11 @@ overflow-x: auto ;
     flex-direction: column;
      justify-content: center;
      align-items: center;
-     height: 200px;
+  
       
     
     
-    background-color: transparent;
+    background-color: white;
     
     position: relative;
     border-radius: .35rem;
@@ -285,7 +365,7 @@ overflow-x: auto ;
     cursor: pointer;
     transform: perspective(1000px) rotateY(var(--rotate-y,0)) translateY(var(--translate-y,0));
   
-    font-size:.8em;
+    
 
   }
   
@@ -304,7 +384,7 @@ overflow-x: auto ;
 
 .card .back {
   transform: rotateY(180deg);
-  height: 225px;
+  height: 500px;
   max-width: 100%;
 
   font-size:.5em;
@@ -313,8 +393,56 @@ overflow-x: auto ;
 .card .back p{
   height: 225px;
     max-width: 150%;
-
+color: blue;
 }
+
+
+pre span{
+  color: black;        
+}
+
+pre span.flip{
+  color: red;     
+}
+
+.card-grid {
+  display: grid;
+  align-items: center;
+
+  gap: .1rem;
+  margin: 5px 5px 5px 5px;
+  padding: 0px;
+max-width: 100%;
+
+} 
+
+
+.card:hover {
+--translate-y: -2px;
+box-shadow: 0 0 5px 2px rgba(0,0,0,0.5);
+opacity: 1;
+}
+
+.card.flip {
+color:white;
+  background-color: #000000;
+  
+}
+
+
+
+.card .front,
+.card .back {
+  position: absolute;
+ 
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+
+  
+ 
+}
+
 
 
  
@@ -473,6 +601,15 @@ height: 25px;
   color: lightblue;
 }
 
+.write-center6 {
+  padding: 5px;
+  margin: 7px;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  background-color: black;
+}
+
 
 .navbar {
   color: black;
@@ -566,45 +703,51 @@ color: white;
   }
 }
 
-* {
-  font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
-    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  letter-spacing: 0.5px;
+
+
+/* Not sure what this does */
+.ce-chat-list {
+  background-color: #143B5E!important ;
 }
 
-.ce-chat-list {
-  background-color:  #143B5E!important;
-}
+/* Left Sidebar */
 
 .ce-chats-container {
-  background-color:  #143B5E!important;
+  background-color:  #143B5E !important;
 }
 
+/* The Chat that is selected */
+
 .ce-active-chat-card {
-  background-color: #cabcdc !important;
-  border: 4px solid #cabcdc !important;
+  background-color:white !important;
+  border: 4px solid #cabcdc;
   border-radius: 0px !important;
 }
 
 .ce-chat-subtitle-text {
+  color: black !important;
+}
+
+/* My Chats Top Menubar */
+.ce-chat-form-container {
+  padding-bottom: 20px;
+ 
+  color: black !important;
+}
+
+/* Shows Button and Input Text Bar */
+.ce-text-input {
+  border-radius: 6px;
+
+  background-color: white;
   color: black;
 }
 
-.ce-chat-form-container {
-  padding-bottom: 20px !important;
-  background-color: #143B5E!important;
-}
-
-.ce-text-input {
-  border-radius: 6px !important;
-  border: 1px solid #3b2a50 !important;
-  background-color: #143B5E!important;
-}
-
+/*  */
 .ce-primary-button {
-  border-radius: 6px !important;
-  background-color: #7554a0 !important;
+  border-radius: 6px; 
+  background-color: lightblue!important;
+  color: white;
   position: relative;
   bottom: 5px;
 }
@@ -621,10 +764,12 @@ svg {
   padding: 0px !important;
 }
 
+/* Plus Button and Icons */
+
 text,
 svg {
   vertical-align: top !important;
-  color: #143B5E!important;
+  color: red!important;
 }
 
 .anticon {
@@ -632,9 +777,11 @@ svg {
 }
 
 .ce-danger-button {
-  background-color: #143B5E !important;
+  background-color: #143B5E!important;
   border-radius: 22px !important;
 }
+
+/* Right Panel Background */
 
 .ce-settings {
   background-color:  #143B5E !important;
@@ -653,13 +800,13 @@ svg {
 
 .ce-chat-settings-container {
   padding-top: 12px !important;
-  background-color: #143B5E!important;
-  color: #143B5E!important;
+  background-color: white;
+
 }
 
 .ce-chat-avatars-row {
   display: none !important;
-  background-color: #143B5E!important;
+  background-color: brown;
 }
 
 /* CUSTOM FEED */
@@ -668,14 +815,14 @@ svg {
   height: 100%;
   width: 90%;
   overflow: scroll;
-  background-color: black;
+  background-color: yellow;
 }
 
 .chat-title-container {
   width: calc(100% - 36px);
   padding: 18px;
   text-align: center;
-  color: black;
+  color: yellow;
 }
 
 .chat-title {
@@ -835,9 +982,7 @@ svg {
   align-items: center;
 }
 
-.form {
-  width: 400px;
-}
+
 
 .title {
   text-align: center;
@@ -907,6 +1052,10 @@ body {
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
 }
 
+.form {
+  width: 350px;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -914,7 +1063,7 @@ body {
 }
 
 .form-group > label {
-  color: #777;
+  color: yellow;
   font-size: .75rem;
   margin-bottom: .25rem;
 }

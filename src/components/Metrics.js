@@ -12,12 +12,12 @@ function Metrics(props) {
   // eslint-disable-next-line no-unused-vars
   const { metrics, metricsToShow, setMetricsToShow } = props;
 
-  const handleToggleMetricToAdd = (id, metric) => {
-    if (id.target.value === 1) {
+  const handleToggleMetricToAdd = (e, metric) => {
+    if (e.target.value === 1) {
       setMetricsToShow((metricsToShow) => [...metricsToShow, metric]);
       // set elemnt to active
     }
-    if (id.target.value === 2) {
+    if (e.target.value === 2) {
       setMetricsToShow((metricsToShow) =>
         metricsToShow.filter((m) => m.id !== metric.id)
       );
@@ -59,10 +59,10 @@ function Metrics(props) {
                     defaultValue={handleDefaultMetricButtonValue(metric)}
                     onChange={(e) => handleToggleMetricToAdd(e, metric)}
                   >
-                    <ToggleButton id={1} variant="outline-dark" value={1}>
+                    <ToggleButton id={1} variant="outline-dark" value="1">
                       Yes
                     </ToggleButton>
-                    <ToggleButton id={2} variant="outline-dark" value={2}>
+                    <ToggleButton id={2} variant="outline-dark" value="2">
                       No
                     </ToggleButton>
                   </ToggleButtonGroup>

@@ -18,7 +18,7 @@ import {
   useHistory,
 } from "react-router-dom";
 
-//Rewrote Edit.js into a functional component
+
 
 const EditPost2 = () => {
   var url = window.location.search;
@@ -31,7 +31,7 @@ const EditPost2 = () => {
 
   const getJSON = async () => {
     const res = await fetch(
-      "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/readstudent" +
+      "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-rvgpo/service/get/incoming_webhook/readone" +
         "?id=" +
         url
     );
@@ -88,38 +88,24 @@ const EditPost2 = () => {
 
     setIsLoading(true);
 
-    if (form.name === name) {
-      console.log("name is same");
-    }
-
-    if (form.text !== text) {
-      console.log("name is different");
-    }
-
     const editedForm = {
       name: form.name,
       text: form.text,
     };
 
-    function updateForm(value) {
-      return setForm(form);
-    }
+    if (form.name ==="" || form.text==="") {
+      console.log("blank field");
+      setTimeout(() => history.push("/create"), 5000);
+    } else {
 
-    console.log(editedForm);
-    console.log(form);
+      function updateForm(value) {
+        return setForm(form);
+      }
 
-    console.log(name);
-    console.log(text);
 
-    //const navigate = useNavigate();
-
-    /*   const handleClick = (e) => {
-      setSelectedItem(e.target.id);
-    }; */
-
-    axios
+      axios
       .put(
-        "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/editpost" +
+        "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-rvgpo/service/get/incoming_webhook/update" +
           "?id=" +
           url,
         editedForm,
@@ -133,21 +119,45 @@ const EditPost2 = () => {
         console.log(error);
       });
 
-    setTimeout(() => history.push("/create"), 5000);
+    setTimeout(() => history.push("/create"), 5000);};
+
+
+
+    }
+
+    
+
+   
+
+   
+
+    
+    console.log(form);
+
+    console.log(name);
+    console.log(text);
+
+    //const navigate = useNavigate();
+
+    /*   const handleClick = (e) => {
+      setSelectedItem(e.target.id);
+    }; */
+
+
 
     //setTimeout(() => navigate("./create"), 2000);
 
     // Redirect to Student List
     // this.props.history.push("/create");
-  };
+
 
   return (
-    <div className="write-center">
-      <div>
+    <div>
+      <div className="write-center">
         <Form onSubmit={onSubmit} value={form}>
           <Form.Group
             controlId="Name"
-            value={obj.name}
+            value={form.name}
             onChange={(e) => updateFormName({ name: e.target.value })}
           >
             <Form.Label>Name</Form.Label>
@@ -156,7 +166,7 @@ const EditPost2 = () => {
 
           <Form.Group
             controlId="Text"
-            value={obj.text}
+            value={form.text}
             onChange={(e) => updateFormText({ text: e.target.value })}
           >
             <Form.Label>Text</Form.Label>
@@ -170,7 +180,7 @@ const EditPost2 = () => {
 
           <div></div>
 
-          <Button variant="danger" size="lg" block="block" type="submit">
+          <Button variant="danger" block="block" type="submit">
             {isLoading ? <LoadingSpinner /> : "Update Post"}
           </Button>
         </Form>

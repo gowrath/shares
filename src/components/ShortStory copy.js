@@ -30,7 +30,7 @@ const ShortStory = (props) => {
   const deleteStudent = (e) => {
     axios
       .delete(
-        "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/delete" +
+        "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-rvgpo/service/get/incoming_webhook/delete" +
           "?id=" +
           e.target.id
       )
@@ -50,7 +50,7 @@ const ShortStory = (props) => {
 
   const getJSON = async () => {
     const res = await fetch(
-      "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/students"
+      "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-rvgpo/service/get/incoming_webhook/students"
     );
     const data = await res.json();
     setJson(data);

@@ -12,7 +12,18 @@ import CommentModal from "./Modal";
 
 //import { useParams } from "react-router-dom";
 
-const ActionMovies = (props) => {
+const ActionMovies = () => {
+  //UseState for Card Change
+
+  const [flip, setFlip] = useState("", []);
+
+  //Function to do dark mode
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setFlip(!flip);
+  };
+
   /*   const handleClick = (e) => {
     setSelectedItem(e.target.id);
   }; */
@@ -32,7 +43,7 @@ const ActionMovies = (props) => {
   const deleteStudent = (e) => {
     axios
       .delete(
-        "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/delete" +
+        "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-rvgpo/service/get/incoming_webhook/delete" +
           "?id=" +
           e.target.id
       )
@@ -52,7 +63,7 @@ const ActionMovies = (props) => {
 
   const getJSON = async () => {
     const res = await fetch(
-      "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/students"
+      "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-rvgpo/service/get/incoming_webhook/read"
     );
     const data = await res.json();
     setJson(data);
@@ -64,19 +75,26 @@ const ActionMovies = (props) => {
 
   var results = Object.values(json);
 
-
-
   return (
     <div>
-      <div className="write-center4">
-        <table className="table">
-          <thead>
-            <tr>
-              <h4>Movie Review</h4>
+      <div>
+        <div>
+          <br></br>
+          <br></br>
+        </div>
+        <Button className="gbar2" onClick={handleClick}>
+       
+          
 
-           
-            </tr>
-          </thead>
+         Dark mode
+   
+        </Button>
+
+
+        
+        <h4 className="gbar5">Movie Review</h4>
+        <table className="table">
+          <thead></thead>
 
           <tbody>
             {results.map((result, idx) => (
@@ -86,7 +104,11 @@ const ActionMovies = (props) => {
                 
                 <td>
                   <h5>{result.name}</h5>
-                  <pre>{result.text}</pre>
+                  <pre>
+                    <span className={`card ${flip ? "flip" : ""}`}>
+                    {result.text}
+                    </span>
+                    </pre>
                 </td>
 
                 <td>
@@ -120,11 +142,9 @@ const ActionMovies = (props) => {
                 <div><br></br>
                 <br></br></div>
               </tr>
-              
-            </div>
+              </div>
             ))}
           </tbody>
-
         </table>
       </div>
     </div>

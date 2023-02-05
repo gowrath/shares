@@ -24,7 +24,7 @@ const EditPost = () => {
 
     axios
       .put(
-        "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-wqycg/service/students/incoming_webhook/editpost" +
+        "https://webhooks.mongodb-realm.com/api/client/v2.0/app/data-rvgpo/service/get/incoming_webhook/editpost" +
           "?id=" +
           "631bc5b36d42fab29a2ede61",
         setPost
